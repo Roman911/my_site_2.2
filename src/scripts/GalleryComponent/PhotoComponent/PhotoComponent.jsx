@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {photoItem} from "./photo.config";
+import {ColumnComponent} from "./ColumnComponent";
 
 import { css } from 'aphrodite/no-important';
 import styles from './PhotoStyle';
@@ -9,14 +10,17 @@ class PhotoComponent extends Component {
   render() {
 
     const header = photoItem.map((item, index) => {
-      return <div key={index} className={css(styles.contentWrapper)}>
-        <h3>{ item.header[this.props.lang] }</h3>
-        <p>{ item.subtitle[this.props.lang] }</p>
-        <p>{ item.text[this.props.lang] }</p>
+      return <div key={index}>
+        <h3 className={css(styles.header)}>{ item.header[this.props.lang] }</h3>
+        <p className={css(styles.text, styles.marginTop)}>{ item.subtitle[this.props.lang] }</p>
+        <p className={css(styles.text, styles.marginBottom)}>{ item.text[this.props.lang] }</p>
       </div>
     });
     return <div className={css(style.pageM)}>
-      { header }
+      <div className={css(styles.contentWrapper)}>
+        { header }
+        <ColumnComponent />
+      </div>
     </div>
   }
 }
