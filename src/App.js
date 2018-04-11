@@ -3,7 +3,7 @@ import { Redirect } from 'react-router';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import { NavBarComponent } from "./scripts/navBarComponent/navBarComponent";
 import { HomeComponent } from "./scripts/HomeComponent/homeComponent";
-import { GalleryComponent } from "./scripts/GalleryComponent/galleryComponent";
+import { GalleryComponent } from "./scripts/GalleryComponent/GalleryComponent";
 import {AboutComponent} from "./scripts/AboutComponent/AboutComponent";
 
 import './App.css';

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-
-import { css } from 'aphrodite/no-important';
-import style from './../../styles/baseStyle';
 import {HeaderComponent} from "./AboutHeaderComponent/HeaderComponent";
 import {MainComponent} from "./AboutMainComponent/MainComponent";
 import {PropertiesComponent} from "./AboutPropertiesComponent/PropertiesComponent";
+import {BarComponent} from "./AboutBarComponent/BarComponent";
+
+import { css } from 'aphrodite/no-important';
+import style from './../../styles/baseStyle';
 
 class AboutComponent extends Component {
 
@@ -19,10 +20,13 @@ class AboutComponent extends Component {
       lang = 2;
     }
 
-    return <section className={css(style.pageM)} id="navAbout">
-      <HeaderComponent lang={lang} />
-      <MainComponent lang={lang} />
-      <PropertiesComponent lang={lang} />
+    return <section id="navAbout">
+      <div className={css(style.pageM)}>
+        <HeaderComponent lang={lang} />
+        <MainComponent lang={lang} />
+        <PropertiesComponent lang={lang} />
+      </div>
+      <BarComponent lang={lang} />
     </section>
   }
 }
