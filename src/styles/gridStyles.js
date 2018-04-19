@@ -9,10 +9,13 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     height: '100%'
   },
+  width100: {
+    maxWidth: '100%'
+  },
   width50: {
     maxWidth: '50%'
   },
-  width100: {
-    maxWidth: '100%'
+  width25: {
+    maxWidth: '25%'
   }
 });

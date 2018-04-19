@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {photoItem} from "./photo.config";
-import {ColumnComponent} from "./ColumnComponent";
+import {ShowPhotoComponent} from "./ShowPhotoComponent";
 
 import { css } from 'aphrodite/no-important';
 import styles from './PhotoStyle';
@@ -19,7 +19,7 @@ class PhotoComponent extends Component {
     return <div className={css(style.pageM)}>
       <div className={css(styles.contentWrapper)}>
         { header }
-        <ColumnComponent />
+        <ShowPhotoComponent />
       </div>
     </div>
   }

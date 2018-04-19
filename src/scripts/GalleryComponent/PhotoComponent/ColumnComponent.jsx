@@ -1,72 +1,75 @@
 import React, { Component } from 'react';
 
 import { css } from 'aphrodite/no-important';
-import styles from './PhotoStyle';
-import gridStyles from './../../../styles/gridStyles'
+import gridStyles from './../../../styles/gridStyles';
 
 class ColumnComponent extends Component {
+
   render() {
 
-    const imgItem = this.props.img;
+    const img = this.props.img;
 
-    const imgColumn1 = imgItem.map((item, index) => {
-      return <div key={index} className="item" onClick={() => this.setModal(true, index, imgItem.length)}>
-        <img src={item.imgUrl} alt=""/>
-      </div>
-    });
-
-    const imgColumn2 = imgItem.map((item, index) => {
-      if ((index % 2) === 0) {
-        return <div key={index} className="item" onClick={() => this.setModal(true, index, imgItem.length)}>
-          <img src={item.imgUrl}/>
-        </div>
+    const imgColumn1 = img.filter((item, index) => {
+      let num;
+      let img;
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        num = 2
+      } else {
+        num = 4
       }
-    });
-
-    const imgColumn22 = imgItem.map((item, index) => {
-      if (((index - 1) % 2) === 0) {
-        return <div key={index} className="item" onClick={() => this.setModal(true, index, imgItem.length)}>
-          <img src={item.imgUrl}/>
-        </div>
+      if ((index % num) === 0) {
+        img = item
       }
+      return img
     });
 
-    const img = imgItem.map((item, index) => {
-      if ((index % 4) === 0) {
-        return <div key={index} className="item" onClick={() => this.setModal(true, index, imgItem.length)}>
-          <img src={item.imgUrl}/>
-        </div>;
+    const imgColumn2 = img.filter((item, index) => {
+      let num;
+      let img;
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        num = 2
+      } else {
+        num = 4
       }
-    });
-    const img2 = imgItem.map((item, index) => {
-      if (((index - 1) % 4) === 0) {
-        return <div key={index} className="item" onClick={() => this.setModal(true, index, imgItem.length)}>
-          <img src={item.imgUrl}/>
-        </div>;
+      if (((index - 1) % num) === 0) {
+        img = item
       }
+      return img
     });
-    const img3 = imgItem.map((item, index) => {
+
+    const imgColumn3 = img.filter((item, index) => {
+      let img;
       if (((index - 2) % 4) === 0) {
-        return <div key={index} className="item" onClick={() => this.setModal(true, index, imgItem.length)}>
-          <img src={item.imgUrl}/>
-        </div>;
+        img = item
       }
+      return img
     });
-    const img4 = imgItem.map((item, index) => {
+
+    const imgColumn4 = img.filter((item, index) => {
+      let img;
       if (((index - 3) % 4) === 0) {
-        return <div key={index} className="item" onClick={() => this.setModal(true, index, imgItem.length)}>
-          <img src={item.imgUrl}/>
-        </div>;
+        img = item
       }
+      return img
     });
 
     let grids;
     if (window.matchMedia("(max-width: 576px)").matches) {
-      grids = [<div>{ imgColumn1 }</div>];
+      grids = [
+        <div className={css(gridStyles.width100)}>{ img }</div>
+      ];
     } else if (window.matchMedia("(max-width: 768px)").matches) {
-      grids = [<div>{ imgColumn2 }</div>, <div>{ imgColumn22 }</div>];
+      grids = [
+        <div className={css(gridStyles.width50)}>{ imgColumn1 }</div>,
+        <div className={css(gridStyles.width50)}>{ imgColumn2 }</div>
+      ];
     } else {
-      grids = [<div>{ img }</div>, <div>{ img2 }</div>, <div>{ img3 }</div>, <div>{ img4 }</div>];
+      grids = [
+        <div className={css(gridStyles.width25)}>{ imgColumn1 }</div>,
+        <div className={css(gridStyles.width25)}>{ imgColumn2 }</div>,
+        <div className={css(gridStyles.width25)}>{ imgColumn3 }</div>,
+        <div className={css(gridStyles.width25)}>{ imgColumn4 }</div>
+      ];
     }
 
     return <div className={css(gridStyles.gridContainer)}>
