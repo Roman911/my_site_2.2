@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {HeaderComponent} from "./HeaderComponent/HeaderComponent";
 import {AboutComponent} from "../AboutComponent/AboutComponent";
 import {InsertComponent} from "./InsertComponent/InsertComponent";
@@ -21,11 +21,11 @@ class HomeComponent extends Component {
     let background;
     let background2;
     if (window.matchMedia("(max-width: 768px)").matches) {
-      background = {backgroundImage: 'url("./bg_portfolio_m.jpg")'};
-      background2 = {backgroundImage: 'url("./photo_m_002.jpg")'};
+      background = {backgroundImage: 'url("./assets/bg_portfolio_m.jpg")'};
+      background2 = {backgroundImage: 'url("./assets/photo_m_002.jpg")'};
     } else {
-      background = {backgroundImage: 'url("./bg_portfolio.jpg")'};
-      background2 = {backgroundImage: 'url("./photo_002.jpg")'};
+      background = {backgroundImage: 'url("./assets/bg_portfolio.jpg")'};
+      background2 = {backgroundImage: 'url("./assets/photo_002.jpg")'};
     }
 
     const insert = insertItem.map((item, index) => {
@@ -36,12 +36,12 @@ class HomeComponent extends Component {
       return <InsertComponent key={index} name={item.name2[lang]} background={background2} />
     });
 
-    return <div>
+    return <Fragment>
       <HeaderComponent />
       <AboutComponent />
       { insert }
       { insert2 }
-    </div>
+    </Fragment>
   }
 }
 

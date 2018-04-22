@@ -21,7 +21,7 @@ class MainComponent extends Component {
 
     return <div className={css(grid.gridContainer)}>
       <div className={css(className, styles.content)}>
-        <img className={css(styles.img)} src="./photo_003.jpg" alt=""/>
+        <img className={css(styles.img)} src="./Assets/photo_003.jpg" alt=""/>
       </div>
       <div className={css(className, styles.content)}>
         { text }

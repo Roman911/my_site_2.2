@@ -5,10 +5,17 @@ export default StyleSheet.create({
     boxSizing: 'border-box'
   },
   pageM: {
-    paddingTop: 64,
-    paddingBottom: 64,
     margin: 'auto',
     height: '100%',
     maxWidth: 992
+  },
+  pageL: {
+    paddingTop: 64,
+    paddingBottom: 64,
+    paddingLeft: 5,
+    paddingRight: 5,
+    margin: 'auto',
+    height: '100%',
+    maxWidth: 1220
   }
 });

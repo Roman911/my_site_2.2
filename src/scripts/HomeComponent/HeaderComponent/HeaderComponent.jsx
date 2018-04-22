@@ -8,9 +8,9 @@ class HeaderComponent extends Component {
   render() {
     let img;
     if (window.matchMedia("(max-width: 768px)").matches) {
-      img = {backgroundImage: 'url("./photo_m_002.jpg")'};
+      img = {backgroundImage: 'url("./assets/photo_m_002.jpg")'};
     } else {
-      img = {backgroundImage: 'url("./photo_002.jpg")'};
+      img = {backgroundImage: 'url("./assets/photo_002.jpg")'};
     }
 
     return <section style={img} className={css(styles.header)} id="navHome">
