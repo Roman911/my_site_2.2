@@ -9,6 +9,11 @@ const itemControl = [
       'Катигорії:',
       'Категории:',
       'Categories:'
+    ],
+    subtitleDate: [
+      'Дата',
+      'Дата',
+      'Date'
     ]
   }
 ];

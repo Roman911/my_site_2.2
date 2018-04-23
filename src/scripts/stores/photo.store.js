@@ -5,9 +5,9 @@ class PhotoStore extends EventEmitter {
     super();
     this._list = [];
     if (window.matchMedia("(max-width: 768px)").matches) {
-      this._url = 'http://www.mocky.io/v2/5ac21b2c3300002c00872f2b';
+      this._url = 'http://www.mocky.io/v2/5addcc04300000262b4b2885';
     } else {
-      this._url = 'http://www.mocky.io/v2/5ac213033300005800872f0a';
+      this._url = 'http://www.mocky.io/v2/5addcc04300000262b4b2885';
     }
   }
 

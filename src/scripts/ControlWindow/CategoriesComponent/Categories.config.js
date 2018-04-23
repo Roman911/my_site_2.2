@@ -1,15 +1,35 @@
 const task = [
   {
-    name: 'Portrait'
+    name: 'portrait',
+    title: [
+      'Портрет',
+      'Портрет',
+      'Portrait'
+    ]
   },
   {
-    name: 'Children'
+    name: 'children',
+    title: [
+      'Діти',
+      'Дети',
+      'Children'
+    ]
   },
   {
-    name: 'Family',
+    name: 'family',
+    title: [
+      "Сім'я",
+      'Семя',
+      'Family'
+    ]
   },
   {
-    name: 'Gestation',
+    name: 'gestation',
+    title: [
+      'Вагітність',
+      'Беременность',
+      'Gestation'
+    ]
   }
 ];
 

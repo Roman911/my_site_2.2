@@ -37,7 +37,8 @@ class ShowPhotoComponent extends Component {
 
   render() {
 
-    const img = imgItem.map((item, index) => {
+    const images = this.props.img;
+    const img = images.map((item, index) => {
       return <div key={index} className={css(styles.item)} >
         <img
           className={css(styles.img)}

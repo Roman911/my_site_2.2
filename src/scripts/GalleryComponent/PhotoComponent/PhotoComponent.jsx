@@ -21,7 +21,7 @@ class PhotoComponent extends Component {
     return <div className={css(style.pageM)}>
       <div className={css(styles.contentWrapper)}>
         { header }
-        <ShowPhotoComponent />
+        <ShowPhotoComponent img={this.props.img} />
       </div>
     </div>
   }

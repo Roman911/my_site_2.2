@@ -47,5 +47,15 @@ export default StyleSheet.create({
   name: {
     marginLeft: 15,
     fontStyle: 'italic'
+  },
+  lineShow: {
+    backgroundColor: '#b2becc'
+  },
+  circleShow: {
+    left: '100%',
+    backgroundColor: '#d6d6d6'
+  },
+  nameShow: {
+    color: '#667d98'
   }
 });
