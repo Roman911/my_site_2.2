@@ -14,7 +14,9 @@ export default StyleSheet.create({
   windowTask: {
     boxSizing: 'border-box',
     border: '1px solid #a0a0a0',
-    boxShadow: '0 0 5px 1px #929292'
+    boxShadow: '0 0 5px 1px #929292',
+    marginBottom: 10,
+    paddingBottom: 7
   },
   windowHeader: {
     boxSizing: 'border-box',
@@ -27,6 +29,10 @@ export default StyleSheet.create({
   text: {
     color: 'white',
     textAlign: 'center'
+  },
+  tags: {
+    margin: 4,
+    display: 'flex'
   }
 });
 

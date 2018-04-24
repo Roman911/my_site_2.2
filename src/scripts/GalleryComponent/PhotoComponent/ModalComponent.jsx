@@ -8,7 +8,7 @@ import styles from './ModalStyle';
 class ModalComponent extends Component {
   render() {
 
-    const slide = imgItem.map((item, index) => {
+    const slide = this.props.img.map((item, index) => {
       return <SlideComponent
         key={index}
         image={item.imgUrl}

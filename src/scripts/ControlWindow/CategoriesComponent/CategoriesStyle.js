@@ -5,6 +5,12 @@ export default StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20
   },
+  windowControlTag: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    paddingLeft: 5,
+    paddingRight: 5
+  },
   subtitle: {
     marginTop: 5,
     marginBottom: 5,

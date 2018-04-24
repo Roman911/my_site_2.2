@@ -5,13 +5,14 @@ import { itemControl } from "../ControlWindow/control.config";
 import { task } from "../ControlWindow/CategoriesComponent/Categories.config";
 import { CategoriesComponent } from "../ControlWindow/CategoriesComponent/CategoriesComponent";
 import { taskDate } from "../ControlWindow/CategoriesComponent/date.config";
-
+import { DateComponent } from "../ControlWindow/CategoriesComponent/DateComponent";
+import { tags } from "../ControlWindow/CategoriesComponent/tags.config";
+import { TagsComponent } from "../ControlWindow/CategoriesComponent/TagsComponent";
 
 import { css } from 'aphrodite/no-important';
 import styles from './GalleryStyle';
 import style from './../ControlWindow/CategoriesComponent/CategoriesStyle';
 import grid from './../../styles/baseStyle';
-import {DateComponent} from "../ControlWindow/CategoriesComponent/DateComponent";
 
 class GalleryComponent extends Component {
   constructor() {
@@ -20,7 +21,9 @@ class GalleryComponent extends Component {
       photo: [],
       showCategories: null,
       currentIndexCategories: null,
-      showDate: false
+      showDate: false,
+      currentIndexTag: null,
+      tag: null
     }
   }
 
@@ -32,6 +35,7 @@ class GalleryComponent extends Component {
   }
 
   toggleCategories(name, index) {
+    this.setState({tag: null, currentIndexTag: null});
     if (this.state.showCategories === name) {
       this.setState({showCategories: null, currentIndexCategories: null})
     } else {
@@ -41,6 +45,15 @@ class GalleryComponent extends Component {
 
   toggleDate() {
     this.setState({showDate: !this.state.showDate})
+  }
+
+  toggleTag(name, index) {
+    this.setState({showCategories: null, currentIndexCategories: null});
+    if (this.state.tag === name) {
+      this.setState({tag: null, currentIndexTag: null})
+    } else {
+      this.setState({tag: name, currentIndexTag: index})
+    }
   }
 
   render() {
@@ -58,6 +71,12 @@ class GalleryComponent extends Component {
     const header = itemControl.map((item, index) => {
       return <div key={index} className={css(styles.windowHeader)}>
         <p className={css(styles.text)}>{ item.header[lang] }</p>
+      </div>
+    });
+
+    const headerTags = itemControl.map((item, index) => {
+      return <div key={index} className={css(styles.windowHeader)}>
+        <p className={css(styles.text)}>{ item.headerTag[lang] }</p>
       </div>
     });
 
@@ -92,6 +111,19 @@ class GalleryComponent extends Component {
       </div>
     });
 
+    const tag = tags.map((item, index) => {
+      return <div
+        className={css(styles.tags)}
+        key={index}
+        onClick={() => this.toggleTag(item.tag, index)}
+      >
+        <TagsComponent
+          name={item.name[lang]}
+          show={this.state.currentIndexTag === index}
+        />
+      </div>
+    });
+
     const img2 = this.state.photo.filter((item) => {
       let img;
       if (item.category === this.state.showCategories) {
@@ -100,11 +132,21 @@ class GalleryComponent extends Component {
       return img
     });
 
+    const img3 = this.state.photo.filter((item) => {
+      let img;
+      if (item.tag === this.state.tag) {
+        img = item
+      }
+      return img
+    });
+
     let images;
-    if (this.state.showCategories === null) {
-      images = this.state.photo
-    } else {
+    if (this.state.showCategories !== null) {
       images = img2
+    } else if (this.state.tag !== null) {
+      images = img3
+    } else {
+      images = this.state.photo
     }
 
     images = this.state.showDate ? images.reverse() : images;
@@ -120,6 +162,12 @@ class GalleryComponent extends Component {
           <div className={css(style.windowControl)}>
             { subtitleDate }
             { checkboxDate }
+          </div>
+        </div>
+        <div className={css(styles.windowTask)}>
+          { headerTags }
+          <div className={css(style.windowControlTag)}>
+            { tag }
           </div>
         </div>
       </div>

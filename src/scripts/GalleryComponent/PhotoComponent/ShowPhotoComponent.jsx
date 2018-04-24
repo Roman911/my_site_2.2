@@ -7,9 +7,9 @@ import { css } from 'aphrodite/no-important';
 import styles from './ShowStyle';
 
 class ShowPhotoComponent extends Component {
-  constructor() {
-    super();
-    const imgUrl = imgItem.map((item) => {
+  constructor(props) {
+    super(props);
+    const imgUrl = this.props.img.map((item) => {
       return item.imgUrl
     });
     this.state = {
@@ -52,6 +52,7 @@ class ShowPhotoComponent extends Component {
     return <Fragment>
       <ColumnComponent img={img}/>
       <ModalComponent
+        img={this.props.img}
         currentIndex={this.state.currentIndex}
         modal={this.state.modal}
         removeClass={this.removeClass}

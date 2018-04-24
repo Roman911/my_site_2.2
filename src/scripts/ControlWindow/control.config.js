@@ -14,6 +14,11 @@ const itemControl = [
       'Дата',
       'Дата',
       'Date'
+    ],
+    headerTag: [
+      'Теги',
+      'Теги',
+      'Tags'
     ]
   }
 ];

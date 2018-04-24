@@ -27,6 +27,7 @@ a {text-decoration: none;}
   background-color: rgba(59,59,59,0.7);
   color: #f1f1f1;
 }
+
 .active p {color: #f1f1f1;}
 .active i {color: #f1f1f1;}
 
