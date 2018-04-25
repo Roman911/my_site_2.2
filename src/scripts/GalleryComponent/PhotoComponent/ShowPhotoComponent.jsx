@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { imgItem } from "./imgItem";
 import { ColumnComponent } from './ColumnComponent';
 import {ModalComponent} from "./ModalComponent";
 
@@ -9,7 +8,7 @@ import styles from './ShowStyle';
 class ShowPhotoComponent extends Component {
   constructor(props) {
     super(props);
-    const imgUrl = this.props.img.map((item) => {
+    let imgUrl = this.props.img.map((item) => {
       return item.imgUrl
     });
     this.state = {
@@ -17,6 +16,7 @@ class ShowPhotoComponent extends Component {
       modalImg: 0,
       images: imgUrl,
       currentIndex: 0,
+      length: 0,
       res: false
     };
     this.removeClass = this.removeClass.bind(this)
@@ -35,6 +35,24 @@ class ShowPhotoComponent extends Component {
     document.body.style.overflow = 'hidden';
   }
 
+  next() {
+    if (this.state.currentIndex < this.state.length - 1) {
+      this.setState({currentIndex: this.state.currentIndex + 1})
+    }
+    else {
+      this.setState({currentIndex: 0})
+    }
+  }
+
+  prev() {
+    if (this.state.currentIndex > 0) {
+      this.setState({currentIndex: this.state.currentIndex - 1})
+    }
+    else {
+      this.setState({currentIndex: this.state.length - 1})
+    }
+  }
+
   render() {
 
     const images = this.props.img;
@@ -44,7 +62,7 @@ class ShowPhotoComponent extends Component {
           className={css(styles.img)}
           src={item.imgUrl}
           alt=""
-          onClick={() => this.setModal(true, index, imgItem.length)}
+          onClick={() => this.setModal(true, index, images.length)}
         />
       </div>
     });
@@ -56,6 +74,8 @@ class ShowPhotoComponent extends Component {
         currentIndex={this.state.currentIndex}
         modal={this.state.modal}
         removeClass={this.removeClass}
+        next={this.next.bind(this)}
+        prev={this.prev.bind(this)}
       />
     </Fragment>
   }

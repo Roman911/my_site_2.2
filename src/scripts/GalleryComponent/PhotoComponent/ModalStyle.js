@@ -9,10 +9,22 @@ export default StyleSheet.create({
     width: '100vw',
     height: '100vh',
     backgroundColor: 'rgba(0, 0, 0, 0.85)',
-    zIndex: 10
+    zIndex: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   showed: {
-    display: 'block'
+    display: 'flex',
+  },
+  relative: {
+    position: 'relative'
+  },
+  btnNextPrev: {
+    position: 'absolute',
+    top: '50%',
+    left: 0,
+    transform: 'translateY(-50%)',
+    height: '100%'
   },
   btnRemove: {
     boxSizing: 'border-box',

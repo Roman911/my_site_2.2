@@ -4,16 +4,13 @@ export default StyleSheet.create({
   slide: {
     display: 'none',
     overflow: 'hidden',
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)'
+    fontSize: 0
   },
   showed: {
     display: 'block'
   },
   img: {
-    maxWidth: 'calc(100vh - 50px)',
+    maxWidth: 'calc(100vw - 50px)',
     maxHeight: 'calc(100vh - 50px)'
   }
 });
