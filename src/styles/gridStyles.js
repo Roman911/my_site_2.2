@@ -2,8 +2,7 @@ import { StyleSheet } from 'aphrodite/no-important';
 
 export default StyleSheet.create({
   gridContainer: {
-    paddingTop: 43,
-    paddingBottom: 43,
+    padding: 5,
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
@@ -12,8 +11,14 @@ export default StyleSheet.create({
   width100: {
     maxWidth: '100%'
   },
+  width66: {
+    maxWidth: '66.666666%'
+  },
   width50: {
     maxWidth: '50%'
+  },
+  width33: {
+    maxWidth: '33.333333%'
   },
   width25: {
     maxWidth: '25%'

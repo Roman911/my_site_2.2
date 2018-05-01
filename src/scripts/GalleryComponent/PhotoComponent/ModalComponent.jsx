@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {SlideComponent} from "./SlideComponent";
+import { SlideComponent } from "./SlideComponent";
+import { DescriptionComponent } from "./DescriptionComponent";
 
 import { css } from 'aphrodite/no-important';
 import styles from './ModalStyle';
@@ -22,10 +23,21 @@ class ModalComponent extends Component {
 
   render() {
 
-    const slide = this.props.img.map((item, index) => {
+    const img = this.props.img;
+
+    const slide = img.map((item, index) => {
       return <SlideComponent
         key={index}
         image={item.imgUrl}
+        show={this.props.currentIndex === index}
+      />
+    });
+
+    const description = img.map((item, index) => {
+      return <DescriptionComponent
+        key={index}
+        title={item.title[this.props.lang]}
+        date={item.date}
         show={this.props.currentIndex === index}
       />
     });
@@ -34,11 +46,16 @@ class ModalComponent extends Component {
 
     return <div className={css(styles.modalBg, show)}>
       <div className={css(styles.relative)}>
-        <button className={css(styles.btnNextPrev)} onClick={() => this.next()}>
-          x
-        </button>
         { slide }
-        <button onClick={() => this.prev()}>y</button>
+        <div className={css(styles.btnOpacity)}>
+          { description }
+          <button className={css(styles.btn, styles.btnPrev)} onClick={() => this.prev()}>
+            <i className='fas fa-chevron-left'/>
+          </button>
+          <button className={css(styles.btn, styles.btnNext)} onClick={() => this.next()}>
+            <i className='fas fa-chevron-right'/>
+          </button>
+        </div>
       </div>
       <button className={css(styles.btnRemove)} onClick={this.props.removeClass}>X</button>
     </div>

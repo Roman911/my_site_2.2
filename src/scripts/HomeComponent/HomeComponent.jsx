@@ -3,6 +3,7 @@ import {HeaderComponent} from "./HeaderComponent/HeaderComponent";
 import {AboutComponent} from "../AboutComponent/AboutComponent";
 import {InsertComponent} from "./InsertComponent/InsertComponent";
 import {insertItem} from "./InsertComponent/insert.config";
+import {PortfolioComponent} from "./PortfolioComponent/PortfolioComponent";
 
 class HomeComponent extends Component {
 
@@ -40,6 +41,7 @@ class HomeComponent extends Component {
       <HeaderComponent />
       <AboutComponent />
       { insert }
+      <PortfolioComponent lang={lang} />
       { insert2 }
     </Fragment>
   }

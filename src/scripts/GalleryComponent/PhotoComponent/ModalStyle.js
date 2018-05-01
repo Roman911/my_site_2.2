@@ -19,12 +19,45 @@ export default StyleSheet.create({
   relative: {
     position: 'relative'
   },
-  btnNextPrev: {
+  btnOpacity: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    opacity: 0,
+    transition: '0.5s',
+    ':hover': {
+      opacity: 1
+    }
+  },
+  btn: {
+    boxSizing: 'border-box',
     position: 'absolute',
     top: '50%',
-    left: 0,
     transform: 'translateY(-50%)',
-    height: '100%'
+    height: '100%',
+    width: '40%',
+    border: 'none',
+    background: 'none',
+    cursor: 'pointer',
+    fontSize: '3rem',
+    color: 'rgba(255, 255, 255, 0.45)',
+    display: 'flex',
+    padding: 20,
+    ':hover': {
+      color: 'rgba(255, 255, 255, 0.75)',
+    }
+  },
+  btnIcon: {
+    color: 'red'
+  },
+  btnNext: {
+    right: 0,
+    justifyContent: 'flex-end'
+  },
+  btnPrev: {
+    left: 0,
+    justifyContent: 'flex-start'
   },
   btnRemove: {
     boxSizing: 'border-box',

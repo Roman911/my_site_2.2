@@ -8,7 +8,7 @@ import styles from './ShowStyle';
 class ShowPhotoComponent extends Component {
   constructor(props) {
     super(props);
-    let imgUrl = this.props.img.map((item) => {
+    const imgUrl = this.props.img.map((item) => {
       return item.imgUrl
     });
     this.state = {
@@ -56,6 +56,7 @@ class ShowPhotoComponent extends Component {
   render() {
 
     const images = this.props.img;
+
     const img = images.map((item, index) => {
       return <div key={index} className={css(styles.item)} >
         <img
@@ -76,6 +77,7 @@ class ShowPhotoComponent extends Component {
         removeClass={this.removeClass}
         next={this.next.bind(this)}
         prev={this.prev.bind(this)}
+        lang={this.props.lang}
       />
     </Fragment>
   }

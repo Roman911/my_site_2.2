@@ -12,8 +12,22 @@ export default StyleSheet.create({
   img: {
     maxWidth: 'calc(100vw - 50px)',
     maxHeight: 'calc(100vh - 50px)'
+  },
+  title: {
+    position: 'absolute',
+    left: 0,
+    width: '100%',
+    transition: '0.5s',
+    zIndex: 100,
+    ':hover': {
+      backgroundColor: 'red'
+    }
+  },
+  titleSize: {
+    margin: 20,
+    textAlign: 'start',
+    color: 'gray',
+    fontSize: '1rem'
   }
 });
-
-
 

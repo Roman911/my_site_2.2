@@ -6,6 +6,7 @@ import {BarComponent} from "./AboutBarComponent/BarComponent";
 
 import { css } from 'aphrodite/no-important';
 import style from './../../styles/baseStyle';
+import styles from './AboutStyle';
 
 class AboutComponent extends Component {
 
@@ -21,7 +22,7 @@ class AboutComponent extends Component {
     }
 
     return <section id="navAbout">
-      <div className={css(style.pageM)}>
+      <div className={css(style.pageM, styles.pageWrapper)}>
         <HeaderComponent lang={lang} />
         <MainComponent lang={lang} />
         <PropertiesComponent lang={lang} />
