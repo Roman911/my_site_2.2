@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { headerItem } from "./header.config";
+import { FormComponent } from "./FormComponent/FormComponent";
+import { LinksComponent } from "./LinksComponent/LinksComponent";
 
 import { css } from 'aphrodite/no-important';
 import styles from './ContactsStyle';
@@ -29,15 +31,19 @@ class ContactsComponent extends Component{
 
     let width;
     let width2;
+    let width3;
     if (window.matchMedia("(max-width: 768px)").matches) {
       width = grid.width100;
-      width2 = grid.width100
+      width2 = grid.width100;
+      width3 = grid.width100
     } else if (window.matchMedia("(max-width: 992px)").matches) {
       width = grid.width50;
-      width2 = grid.width50
+      width2 = grid.width50;
+      width3 = grid.width100;
     } else {
       width = grid.width33;
-      width2 = grid.width66
+      width2 = grid.width66;
+      width3 = grid.width50
     }
 
     return <section className={css(style.pageM, styles.contentWrapper)}>
@@ -47,7 +53,10 @@ class ContactsComponent extends Component{
           <img className={css(styles.img)} src='./assets/photo_17.jpg' alt=""/>
         </div>
         <div className={css(width2)}>
-          <p>123</p>
+          <div className={css(grid.gridContainer, styles.item)}>
+            <FormComponent width={width3} lang={lang} />
+            <LinksComponent width={width3} />
+          </div>
         </div>
       </div>
     </section>

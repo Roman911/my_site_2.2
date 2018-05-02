@@ -2,6 +2,7 @@ import { StyleSheet } from 'aphrodite/no-important';
 
 export default StyleSheet.create({
   contentWrapper: {
+    boxSizing: 'border-box',
     marginTop: 63,
     marginBottom: 63,
     border: '1px solid #a0a0a0',
@@ -28,7 +29,8 @@ export default StyleSheet.create({
     opacity: '0.75'
   },
   item: {
-    width: '100%'
+    boxSizing: 'border-box',
+    padding: 40
   }
 });
 
