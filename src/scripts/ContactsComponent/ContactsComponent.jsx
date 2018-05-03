@@ -46,16 +46,20 @@ class ContactsComponent extends Component{
       width3 = grid.width50
     }
 
+    const border = this.props.border ? styles.border : '';
+
     return <section className={css(style.pageM, styles.contentWrapper)}>
-      { header }
-      <div className={css(grid.gridContainer)}>
-        <div className={css(styles.fontSize, width)}>
-          <img className={css(styles.img)} src='./assets/photo_17.jpg' alt=""/>
-        </div>
-        <div className={css(width2)}>
-          <div className={css(grid.gridContainer, styles.item)}>
-            <FormComponent width={width3} lang={lang} />
-            <LinksComponent width={width3} />
+      <div className={css(border)}>
+        { header }
+        <div className={css(grid.gridContainer)}>
+          <div className={css(styles.fontSize, width)}>
+            <img className={css(styles.img)} src='./assets/photo_17.jpg' alt=""/>
+          </div>
+          <div className={css(width2)}>
+            <div className={css(grid.gridContainer, styles.item)}>
+              <FormComponent width={width3} lang={lang} />
+              <LinksComponent width={width3} lang={lang} />
+            </div>
           </div>
         </div>
       </div>

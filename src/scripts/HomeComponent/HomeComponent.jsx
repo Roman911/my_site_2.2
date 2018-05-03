@@ -4,6 +4,7 @@ import {AboutComponent} from "../AboutComponent/AboutComponent";
 import {InsertComponent} from "./InsertComponent/InsertComponent";
 import {insertItem} from "./InsertComponent/insert.config";
 import {PortfolioComponent} from "./PortfolioComponent/PortfolioComponent";
+import {ContactsComponent} from "../ContactsComponent/ContactsComponent";
 
 class HomeComponent extends Component {
 
@@ -23,10 +24,10 @@ class HomeComponent extends Component {
     let background2;
     if (window.matchMedia("(max-width: 768px)").matches) {
       background = {backgroundImage: 'url("./assets/bg_portfolio_m.jpg")'};
-      background2 = {backgroundImage: 'url("./assets/photo_m_002.jpg")'};
+      background2 = {backgroundImage: 'url("./assets/bg_contacts_m.jpg")'};
     } else {
       background = {backgroundImage: 'url("./assets/bg_portfolio.jpg")'};
-      background2 = {backgroundImage: 'url("./assets/photo_002.jpg")'};
+      background2 = {backgroundImage: 'url("./assets/bg_contacts.jpg")'};
     }
 
     const insert = insertItem.map((item, index) => {
@@ -43,6 +44,7 @@ class HomeComponent extends Component {
       { insert }
       <PortfolioComponent lang={lang} />
       { insert2 }
+      <ContactsComponent />
     </Fragment>
   }
 }

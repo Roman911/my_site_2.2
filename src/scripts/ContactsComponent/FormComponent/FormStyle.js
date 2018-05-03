@@ -7,7 +7,7 @@ export default StyleSheet.create({
   },
   header: {
     marginBottom: 20,
-    textAlign: 'justify'
+    textAlign: 'center'
   },
   text: {
     fontStyle: 'italic'
@@ -33,7 +33,8 @@ export default StyleSheet.create({
     border: 'none',
     cursor: 'pointer',
     boxShadow: '0 0 5px 2px #777',
-    color: '#e4e4e4'
+    color: '#e4e4e4',
+    fontSize: '1rem'
   },
   btn__text: {
     display: 'inline',

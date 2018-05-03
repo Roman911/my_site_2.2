@@ -2,15 +2,54 @@ import { StyleSheet } from 'aphrodite/no-important';
 
 export default StyleSheet.create({
   navBarMob: {
-    display: 'none'
+    display: 'none',
+    boxSizing: 'border-box',
+    position: 'absolute',
+    width: '100%',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    boxShadow: '0 0 5px 5px rgb(119, 119, 119)',
+    zIndex: 1
   },
 
-  navBarDiscTop: {
+  showedMob: {
+    display: 'block'
+  },
+
+  btn: {
+    fontSize: '2.5rem',
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 20,
+    color: 'gray'
+  },
+
+  navBarList: {
+    position: 'absolute',
+    backgroundColor: 'rgb(255, 255, 255)',
+    width: '100%',
+    transform: 'translateX(-100%)',
+    transition: '0.5s'
+  },
+
+  nBLShowed: {
+    transform: 'translateX(0)'
+  },
+
+  a: {
+    justifyContent: 'center',
+    fontSize: '2rem'
+  },
+
+  p: {
+    lineHeight: '1.8'
+  },
+
+  navBarDeskTop: {
+    display: 'none',
     boxSizing: 'border-box',
     position: 'absolute',
     top: 0,
     width: '100%',
-    display: 'flex',
     justifyContent: 'start',
     alignContent: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
@@ -18,6 +57,11 @@ export default StyleSheet.create({
     zIndex: 1,
     fontFamily: 'Font Awesome'
   },
+
+  showedDeskTop: {
+    display: 'flex'
+  },
+
 
   navBarLink: {
     paddingTop: '0.8rem',
@@ -28,6 +72,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     fontSize: '1.2rem',
     color: 'rgb(119, 119, 119)',
+    textAlign: 'center',
     ':hover': {
       backgroundColor: 'rgba(119, 119, 119, 0.2)'
     }

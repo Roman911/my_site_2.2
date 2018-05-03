@@ -3,8 +3,11 @@ import { StyleSheet } from 'aphrodite/no-important';
 export default StyleSheet.create({
   contentWrapper: {
     boxSizing: 'border-box',
-    marginTop: 63,
-    marginBottom: 63,
+    paddingTop: 63,
+    paddingBottom: 63,
+    margin: 'auto'
+  },
+  border: {
     border: '1px solid #a0a0a0',
     boxShadow: '0 0 5px 1px #929292'
   },

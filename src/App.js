@@ -23,7 +23,7 @@ class App extends Component {
             <Route path='/home' render={() => <HomeComponent/>}/>
             <Route path='/gallery' render={() => <GalleryComponent/>}/>
             <Route path='/about' render={() => <AboutComponent/>}/>
-            <Route path='/contacts' render={() => <ContactsComponent/>}/>
+            <Route path='/contacts' render={() => <ContactsComponent border={true}/>}/>
             <Redirect path='/' to='/home'/>
           </Switch>
           <Footer />
