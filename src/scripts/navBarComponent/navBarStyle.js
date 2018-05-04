@@ -27,12 +27,13 @@ export default StyleSheet.create({
     position: 'absolute',
     backgroundColor: 'rgb(255, 255, 255)',
     width: '100%',
-    transform: 'translateX(-100%)',
+    transform: 'scaleY(0)',
+    transformOrigin: 'top',
     transition: '0.5s'
   },
 
   nBLShowed: {
-    transform: 'translateX(0)'
+    transform: 'scaleY(1)'
   },
 
   a: {

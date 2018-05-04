@@ -19,14 +19,12 @@ export default StyleSheet.create({
   },
   label: {
     display: 'flex',
-    alignItems: 'center'
   },
   input: {
     display: 'none'
   },
   checkbox: {
-    position: 'relative',
-    display: 'flex'
+    position: 'relative'
   },
   line: {
     height: 2,

@@ -12,14 +12,18 @@ class DateComponent extends Component {
 
     let title = this.props.show ? this.props.title2 : this.props.title;
 
+    const matchMedia = window.matchMedia("(max-width: 768px)").matches;
+    const displayNone = matchMedia ? {display: 'none'} : {display: 'flex'};
+    const textAlign = matchMedia ? {justifyContent: 'center'} : {alignItems: 'center'};
+
     return <Fragment>
-      <label className={css(styles.label)} >
+      <label style={textAlign} className={css(styles.label)} >
         <input
           className={css(styles.input)}
           name={this.props.name}
           type="checkbox"
         />
-        <div className={css(styles.checkbox)}>
+        <div style={displayNone} className={css(styles.checkbox)}>
           <span className={css(styles.line, styleLine)} />
           <span className={css(styles.circle, styleCircle)} />
         </div>

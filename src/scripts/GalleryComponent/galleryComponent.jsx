@@ -23,7 +23,8 @@ class GalleryComponent extends Component {
       currentIndexCategories: null,
       showDate: false,
       currentIndexTag: null,
-      tag: null
+      tag: null,
+      showedMob: false
     }
   }
 
@@ -36,23 +37,38 @@ class GalleryComponent extends Component {
 
   toggleCategories(name, index) {
     this.setState({tag: null, currentIndexTag: null});
+    this.setState({showedMob: false});
     if (this.state.showCategories === name) {
       this.setState({showCategories: null, currentIndexCategories: null})
     } else {
       this.setState({showCategories: name, currentIndexCategories: index})
     }
+    document.body.style.overflow = '';
   }
 
   toggleDate() {
-    this.setState({showDate: !this.state.showDate})
+    this.setState({showDate: !this.state.showDate});
+    this.setState({showedMob: false});
+    document.body.style.overflow = '';
   }
 
   toggleTag(name, index) {
     this.setState({showCategories: null, currentIndexCategories: null});
+    this.setState({showedMob: false});
     if (this.state.tag === name) {
       this.setState({tag: null, currentIndexTag: null})
     } else {
       this.setState({tag: name, currentIndexTag: index})
+    }
+    document.body.style.overflow = '';
+  }
+
+  handleClick() {
+    this.setState({showedMob: !this.state.showedMob});
+    if (this.state.showedMob === true) {
+      document.body.style.overflow = '';
+    } else {
+      document.body.style.overflow = 'hidden';
     }
   }
 
@@ -151,20 +167,36 @@ class GalleryComponent extends Component {
 
     images = this.state.showDate ? images.reverse() : images;
 
+    const matchMedia = window.matchMedia("(max-width: 768px)").matches;
+    const contentWrapper = matchMedia ? styles.contentWrapperMob : styles.contentWrapper;
+    const displayNone = matchMedia ? {display: 'block'} : {display: 'none'};
+    const borderNone = matchMedia ? {border: 'none', boxShadow: 'none'} : {border: '1px solid #a0a0a0'};
+    const textAlign = matchMedia ? {textAlign: 'center', boxShadow: 'none'} : {textAlign: 'start'};
+
+    let showed = this.state.showedMob ? {transform: 'translateX(0)'} : {transform: 'translateX(-100%)'};
+    let showed2 = matchMedia ? showed : {transform: 'translateX(0)'};
+
     return <section className={css(styles.gallery, grid.pageL)}>
-      <div className={css(styles.contentWrapper)}>
-        <div className={css(styles.windowTask)}>
+      <div
+        onClick={() => this.handleClick()}
+        style={displayNone}
+        className={css(styles.windowTaskMob)}
+      >
+        { header }
+      </div>
+      <div style={showed2} className={css(contentWrapper)}>
+        <div style={borderNone} className={css(styles.windowTask)}>
           { header }
-          <div className={css(style.windowControl)}>
+          <div style={textAlign} className={css(style.windowControl)}>
             { subtitleCategories }
             { checkbox }
           </div>
-          <div className={css(style.windowControl)}>
+          <div style={textAlign} className={css(style.windowControl)}>
             { subtitleDate }
             { checkboxDate }
           </div>
         </div>
-        <div className={css(styles.windowTask)}>
+        <div style={borderNone} className={css(styles.windowTask)}>
           { headerTags }
           <div className={css(style.windowControlTag)}>
             { tag }
