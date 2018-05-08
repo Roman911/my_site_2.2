@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $lightGray } from "../../../styles/variables";
+
 export default StyleSheet.create({
   description: {
     display: 'none',
@@ -19,7 +21,7 @@ export default StyleSheet.create({
   text: {
     margin: 20,
     textAlign: 'start',
-    color: '#d6d6d6'
+    color: $lightGray
   }
 });
 

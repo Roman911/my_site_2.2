@@ -1,28 +1,30 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $darkWhite, $lightGray, $darkGray, $Red } from "../../../styles/variables";
+
 export default StyleSheet.create({
   btn: {
     boxSizing: 'border-box',
     border: 'none',
-    backgroundColor: '#f1f1f1',
+    backgroundColor: $darkWhite,
     paddingTop: 0,
     paddingBottom: 0,
     paddingLeft: 6,
     paddingRight: 6,
     cursor: 'pointer',
     ':hover': {
-      backgroundColor: '#d6d6d6'
+      backgroundColor: $lightGray
     }
   },
   btnActive: {
-    backgroundColor: '#3b3b3b',
+    backgroundColor: $darkGray,
     transform: 'scale(1.12)',
     ':hover': {
-      backgroundColor: '#3b3b3b'
+      backgroundColor: $darkGray
     }
   },
   btnText: {
     fontWeight: 500,
-    color: 'red'
+    color: $Red
   }
 });

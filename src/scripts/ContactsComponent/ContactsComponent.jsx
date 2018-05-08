@@ -3,6 +3,8 @@ import { headerItem } from "./header.config";
 import { FormComponent } from "./FormComponent/FormComponent";
 import { LinksComponent } from "./LinksComponent/LinksComponent";
 
+import { lang } from "../log/lang";
+
 import { css } from 'aphrodite/no-important';
 import styles from './ContactsStyle';
 import style from './../../styles/baseStyle';
@@ -11,16 +13,6 @@ import grid from './../../styles/gridStyles'
 class ContactsComponent extends Component{
 
   render() {
-
-    let lang;
-    const languageBrowser = navigator.language;
-    if (languageBrowser === 'uk-UA' || languageBrowser === 'uk') {
-      lang = 0;
-    } else if (languageBrowser === 'ru-RU' || languageBrowser === 'ru') {
-      lang = 1;
-    } else {
-      lang = 2;
-    }
 
     const header = headerItem.map((item, index) => {
       return <div key={index} className={css(styles.header)}>

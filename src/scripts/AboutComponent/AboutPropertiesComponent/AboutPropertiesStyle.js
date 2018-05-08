@@ -1,8 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-const Gray = '#777';
-const lightGray = '#d6d6d6';
-const darkGray= '#4d4d4d';
+import { $white, $lightGray, $Gray, $darkGray } from "../../../styles/variables";
 
 export default StyleSheet.create({
   block: {
@@ -12,7 +10,7 @@ export default StyleSheet.create({
   header: {
     display: 'flex',
     alignItems: 'center',
-    color: Gray
+    color: $Gray
   },
   text: {
     padding: 16,
@@ -20,14 +18,14 @@ export default StyleSheet.create({
   },
   bar: {
     width: '100%',
-    backgroundColor: lightGray
+    backgroundColor: $lightGray
   },
   rate: {
-    backgroundColor: darkGray
+    backgroundColor: $darkGray
   },
   textRate: {
     padding: 10,
     textAlign: 'center',
-    color: 'white'
+    color: $white
   }
 });

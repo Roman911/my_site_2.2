@@ -9,6 +9,8 @@ import { DateComponent } from "../ControlWindow/CategoriesComponent/DateComponen
 import { tags } from "../ControlWindow/CategoriesComponent/tags.config";
 import { TagsComponent } from "../ControlWindow/CategoriesComponent/TagsComponent";
 
+import { lang } from "../log/lang";
+
 import { css } from 'aphrodite/no-important';
 import styles from './GalleryStyle';
 import style from './../ControlWindow/CategoriesComponent/CategoriesStyle';
@@ -73,16 +75,6 @@ class GalleryComponent extends Component {
   }
 
   render() {
-
-    let lang;
-    const languageBrowser = navigator.language;
-    if (languageBrowser === 'uk-UA' || languageBrowser === 'uk') {
-      lang = 0;
-    } else if (languageBrowser === 'ru-RU' || languageBrowser === 'ru') {
-      lang = 1;
-    } else {
-      lang = 2;
-    }
 
     const header = itemControl.map((item, index) => {
       return <div key={index} className={css(styles.windowHeader)}>
@@ -203,7 +195,7 @@ class GalleryComponent extends Component {
           </div>
         </div>
       </div>
-      <PhotoComponent lang={lang} img={images} />
+      <PhotoComponent img={images} />
     </section>
   }
 }

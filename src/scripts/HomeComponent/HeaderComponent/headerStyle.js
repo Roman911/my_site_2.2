@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $lightBlack, $Red } from "../../../styles/variables";
+
 export default StyleSheet.create({
   header: {
     boxSizing: 'border-box',
@@ -19,12 +21,12 @@ export default StyleSheet.create({
     paddingBottom: '2px',
     paddingLeft: '30px',
     paddingRight: '30px',
-    backgroundColor: '#0c0c0c',
+    backgroundColor: $lightBlack,
     transform: 'translate(-50%, -50%)',
     display: 'flex',
     boxShadow: '0 0 8px 3px #5f5f5f'
   },
   red: {
-    color: 'red'
+    color: $Red
   }
 });

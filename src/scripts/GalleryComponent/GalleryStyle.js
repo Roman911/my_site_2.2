@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $white, $Gray } from "../../styles/variables";
+
 export default StyleSheet.create({
   gallery: {
     boxSizing: 'border-box',
@@ -23,10 +25,10 @@ export default StyleSheet.create({
     paddingBottom: 10,
     paddingLeft: 25,
     paddingRight: 25,
-    backgroundColor: '#777'
+    backgroundColor: $Gray
   },
   text: {
-    color: 'white',
+    color: $white,
     textAlign: 'center'
   },
   tags: {
@@ -47,7 +49,7 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
     zIndex: 1,
-    backgroundColor: 'white',
+    backgroundColor: $white,
     transition: '0.5s'
   }
 });

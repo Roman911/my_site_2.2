@@ -1,7 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-const grey = '#777';
-const darkGrey = '#3b3b3b';
+import { $white, $Gray, $darkGray } from "../../styles/variables";
 
 export default StyleSheet.create({
   footer: {
@@ -12,10 +11,10 @@ export default StyleSheet.create({
     paddingBottom: 64,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: grey,
+    backgroundColor: $Gray,
     transition: '0.5s',
     ':hover': {
-      backgroundColor: darkGrey,
+      backgroundColor: $darkGray,
       transition: '0.5s'
     }
   },
@@ -27,6 +26,6 @@ export default StyleSheet.create({
     textAlign: 'center'
   },
   text: {
-    color: 'white'
+    color: $white
   }
 });

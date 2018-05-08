@@ -1,5 +1,17 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $white, $Gray } from "../../styles/variables";
+
+const translateKeyframes = {
+  '0%': {
+    transform: 'translateY(-100%)',
+  },
+
+  '100%': {
+    transform: 'translateY(0)',
+  },
+};
+
 export default StyleSheet.create({
   navBarMob: {
     display: 'none',
@@ -20,12 +32,12 @@ export default StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 20,
-    color: 'gray'
+    color: $Gray
   },
 
   navBarList: {
     position: 'absolute',
-    backgroundColor: 'rgb(255, 255, 255)',
+    backgroundColor: $white,
     width: '100%',
     transform: 'scaleY(0)',
     transformOrigin: 'top',
@@ -72,7 +84,7 @@ export default StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     fontSize: '1.2rem',
-    color: 'rgb(119, 119, 119)',
+    color: $Gray,
     textAlign: 'center',
     ':hover': {
       backgroundColor: 'rgba(119, 119, 119, 0.2)'
@@ -83,6 +95,11 @@ export default StyleSheet.create({
     lineHeight: 0,
     marginLeft: 10
   },
-
+  fixed: {
+    position: 'fixed',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    animationName: translateKeyframes,
+    animationDuration: '0.5s',
+  }
 
 });

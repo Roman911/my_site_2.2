@@ -1,8 +1,13 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $lightGray2 } from "../../../styles/variables";
+
 export default StyleSheet.create({
   contentWrapper: {
     border: '1px solid #a0a0a0',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: $lightGray2,
     marginLeft: 5,
     marginRight: 5,
     textAlign: 'center',

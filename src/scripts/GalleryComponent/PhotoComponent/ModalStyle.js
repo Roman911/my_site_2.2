@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $Gray, $lightGray, $Red } from "../../../styles/variables";
+
 export default StyleSheet.create({
   modalBg: {
     display: 'none',
@@ -49,7 +51,7 @@ export default StyleSheet.create({
     }
   },
   btnIcon: {
-    color: 'red'
+    color: $Red
   },
   btnNext: {
     right: 0,
@@ -71,15 +73,17 @@ export default StyleSheet.create({
     top: '1%',
     right: '2%',
     cursor: 'pointer',
-    color: '#777',
+    color: $Gray,
     fontSize: '1.3rem',
     fontWeight: 500,
     transition: '0.5s',
     ':hover': {
       boxSizing: 'border-box',
-      border: '1px solid red',
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderColor: $Red,
       borderRadius: 17,
-      color: '#adadad',
+      color: $lightGray,
       backgroundColor: 'rgba(119,119,119,0.15)',
       transformOrigin: 'center',
       transform: 'rotate(180deg)'

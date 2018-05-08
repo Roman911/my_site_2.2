@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { SlideComponent } from "./SlideComponent";
 import { DescriptionComponent } from "./DescriptionComponent";
 
+import { lang } from "../../log/lang";
+
 import { css } from 'aphrodite/no-important';
 import styles from './ModalStyle';
 
@@ -36,7 +38,7 @@ class ModalComponent extends Component {
     const description = img.map((item, index) => {
       return <DescriptionComponent
         key={index}
-        title={item.title[this.props.lang]}
+        title={item.title[lang]}
         date={item.date}
         show={this.props.currentIndex === index}
       />

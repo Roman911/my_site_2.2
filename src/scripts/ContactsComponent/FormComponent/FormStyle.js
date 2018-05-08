@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $lightGray, $lightBlack } from "../../../styles/variables";
+
 export default StyleSheet.create({
   item: {
     boxSizing: 'border-box',
@@ -29,16 +31,16 @@ export default StyleSheet.create({
     paddingBottom: 2,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: '#242424',
+    backgroundColor: $lightBlack,
     border: 'none',
     cursor: 'pointer',
     boxShadow: '0 0 5px 2px #777',
-    color: '#e4e4e4',
+    color: $lightGray,
     fontSize: '1rem'
   },
   btn__text: {
     display: 'inline',
-    color: '#e4e4e4',
+    color: $lightGray,
     marginLeft: 15
   },
   btn__text_red: {

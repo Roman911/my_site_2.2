@@ -5,6 +5,28 @@ import { css } from 'aphrodite/no-important';
 import styles from './FormStyle'
 
 class FormComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: []
+    }
+  }
+
+  handleClick() {
+    fetch('./action.php', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstParam: 'yourValue',
+        firstParam2: 'yourValue'
+      }),
+    });
+  }
 
   render() {
 
@@ -39,7 +61,7 @@ class FormComponent extends Component {
       { header }
       { inp }
       <div className={css(styles.btn)}>
-        <button className={css(styles.button)}>
+        <button onClick={() => this.handleClick()} className={css(styles.button)}>
           <i className='fab fa-telegram-plane'/>
           <p className={css(styles.btn__text)}>subm</p>
           <p className={css(styles.btn__text_red)}>it</p>

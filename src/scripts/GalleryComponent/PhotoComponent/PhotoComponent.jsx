@@ -11,8 +11,8 @@ class PhotoComponent extends Component {
   render() {
     return <div className={css(style.pageM)}>
       <div className={css(styles.contentWrapper)}>
-        <HeaderPhotoComponent lang={this.props.lang} />
-        <ShowPhotoComponent img={this.props.img} lang={this.props.lang} />
+        <HeaderPhotoComponent />
+        <ShowPhotoComponent img={this.props.img} />
       </div>
     </div>
   }

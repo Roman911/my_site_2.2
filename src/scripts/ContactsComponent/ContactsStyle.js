@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $lightGray } from "../../styles/variables";
+
 export default StyleSheet.create({
   contentWrapper: {
     boxSizing: 'border-box',
@@ -8,7 +10,9 @@ export default StyleSheet.create({
     margin: 'auto'
   },
   border: {
-    border: '1px solid #a0a0a0',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: $lightGray,
     boxShadow: '0 0 5px 1px #929292'
   },
   header: {

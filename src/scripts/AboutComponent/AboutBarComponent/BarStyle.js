@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-const darkGray = '#4d4d4d';
+import { $darkGray } from "../../../styles/variables";
 
 export default StyleSheet.create({
   bar: {
@@ -8,7 +8,7 @@ export default StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-around',
     width: '100%',
-    backgroundColor: darkGray
+    backgroundColor: $darkGray
   },
   item: {
     padding: 24

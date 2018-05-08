@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import {contentItem} from "../About.config";
+import { contentItem } from "../About.config";
+
+import { lang } from "../../log/lang";
 
 import {css} from "aphrodite/no-important";
 import styles from "./MainStyle";
@@ -16,7 +18,7 @@ class MainComponent extends Component {
     }
 
     const text = contentItem.map((item, index) => {
-      return <p key={index} className={css(styles.text)}>{item.text2[this.props.lang]}</p>
+      return <p key={index} className={css(styles.text)}>{item.text2[lang]}</p>
     });
 
     return <div className={css(grid.gridContainer)}>

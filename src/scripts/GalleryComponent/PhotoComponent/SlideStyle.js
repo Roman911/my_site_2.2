@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $Gray, $Red } from "../../../styles/variables";
+
 export default StyleSheet.create({
   slide: {
     display: 'none',
@@ -20,13 +22,13 @@ export default StyleSheet.create({
     transition: '0.5s',
     zIndex: 100,
     ':hover': {
-      backgroundColor: 'red'
+      backgroundColor: $Red
     }
   },
   titleSize: {
     margin: 20,
     textAlign: 'start',
-    color: 'gray',
+    color: $Gray,
     fontSize: '1rem'
   }
 });

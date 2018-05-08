@@ -27,7 +27,7 @@ class PortfolioComponent extends Component {
 
     const img = this.state.photo.filter((item) => {
       let img;
-      if (item.tag === 'tatiana') {
+      if (item.showed === true) {
         img = item
       }
       return img
@@ -35,8 +35,8 @@ class PortfolioComponent extends Component {
 
     return <section className={css(style.pageM)}>
       <div className={css(styles.contentWrapper)}>
-        <HeaderPhotoComponent lang={this.props.lang} />
-        <ShowPhotoComponent img={img} lang={this.props.lang} />
+        <HeaderPhotoComponent />
+        <ShowPhotoComponent img={img} />
         <div className={css(styles.btn)}>
           <NavLink to='/gallery'>
             <button className={css(styles.button)}>

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { ColumnComponent } from './ColumnComponent';
-import {ModalComponent} from "./ModalComponent";
+import { ModalComponent } from "./ModalComponent";
 
 import { css } from 'aphrodite/no-important';
 import styles from './ShowStyle';
@@ -77,7 +77,6 @@ class ShowPhotoComponent extends Component {
         removeClass={this.removeClass}
         next={this.next.bind(this)}
         prev={this.prev.bind(this)}
-        lang={this.props.lang}
       />
     </Fragment>
   }

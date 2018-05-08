@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $white } from "../../../styles/variables";
+
 export default StyleSheet.create({
   relative: {
     position: 'relative'
@@ -22,6 +24,6 @@ export default StyleSheet.create({
   text: {
     textTransform: 'uppercase',
     letterSpacing: 16,
-    color: 'white'
+    color: $white
   }
 });

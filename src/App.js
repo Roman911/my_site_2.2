@@ -12,13 +12,14 @@ import './App.css';
 
 import { css } from 'aphrodite/no-important';
 import styles from './styles/baseStyle';
+import {ScrollToTop} from "./scripts/ScrollToTop/ScrollToTop";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className={css(styles.pageWrapper)}>
-          <NavBarComponent />
+          <NavBarComponent height='300' />
           <Switch>
             <Route path='/home' render={() => <HomeComponent/>}/>
             <Route path='/gallery' render={() => <GalleryComponent/>}/>
@@ -27,6 +28,7 @@ class App extends Component {
             <Redirect path='/' to='/home'/>
           </Switch>
           <Footer />
+          <ScrollToTop height='700' scrollStepInPx="50" delayInMs="16.66" />
         </div>
       </Router>
     );

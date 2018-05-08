@@ -1,5 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
+import { $Red } from "../../../styles/variables";
+
 export default StyleSheet.create({
   item: {
     boxSizing: 'border-box',
@@ -21,7 +23,7 @@ export default StyleSheet.create({
   },
   hover: {
     ':hover': {
-      color: '#e45242'
+      color: $Red
     }
   }
 });
