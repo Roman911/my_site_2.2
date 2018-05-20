@@ -9,12 +9,9 @@ import styles from './PortfolioStyle';
 import {photoStore} from "../../stores/photo.store";
 
 class PortfolioComponent extends Component {
-  constructor() {
-    super();
-    this.state = {
-      photo: []
-    }
-  }
+  state = {
+    photo: []
+  };
 
   componentDidMount() {
     photoStore.subscribe('dataChanged', (photo) => {

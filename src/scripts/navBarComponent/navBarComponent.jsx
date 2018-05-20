@@ -8,21 +8,17 @@ import { css } from 'aphrodite/no-important';
 import styles from './navBarStyle'
 
 class NavBarComponent extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showed: false,
-      fixed: false
-    };
-    this.onScroll = this.onScroll.bind(this)
-  }
+  state = {
+    showed: false,
+    fixed: false
+  };
 
   componentDidMount() {
-    document.addEventListener('scroll', this.onScroll, false)
+    document.addEventListener('scroll', this.onScroll.bind(this), false)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('scroll', this.onScroll, false)
+    document.removeEventListener('scroll', this.onScroll.bind(this), false)
   }
 
   onScroll() {

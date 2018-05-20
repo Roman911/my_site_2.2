@@ -13,7 +13,10 @@ export default StyleSheet.create({
   },
   img: {
     maxWidth: 'calc(100vw - 50px)',
-    maxHeight: 'calc(100vh - 50px)'
+    maxHeight: 'calc(100vh - 50px)',
+    '@media (max-width: 768px)': {
+      opacity: 1
+    }
   },
   title: {
     position: 'absolute',

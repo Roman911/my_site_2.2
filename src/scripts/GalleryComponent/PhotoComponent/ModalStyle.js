@@ -30,6 +30,9 @@ export default StyleSheet.create({
     transition: '0.5s',
     ':hover': {
       opacity: 1
+    },
+    '@media (max-width: 768px)': {
+      opacity: 1
     }
   },
   btn: {

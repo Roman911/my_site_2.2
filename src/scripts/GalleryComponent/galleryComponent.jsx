@@ -17,18 +17,15 @@ import style from './../ControlWindow/CategoriesComponent/CategoriesStyle';
 import grid from './../../styles/baseStyle';
 
 class GalleryComponent extends Component {
-  constructor() {
-    super();
-    this.state = {
-      photo: [],
-      showCategories: null,
-      currentIndexCategories: null,
-      showDate: false,
-      currentIndexTag: null,
-      tag: null,
-      showedMob: false
-    }
-  }
+  state = {
+    photo: [],
+    showCategories: null,
+    currentIndexCategories: null,
+    showDate: false,
+    currentIndexTag: null,
+    tag: null,
+    showedMob: false
+  };
 
   componentDidMount() {
     photoStore.subscribe('dataChanged', (photo) => {
@@ -157,7 +154,7 @@ class GalleryComponent extends Component {
       images = this.state.photo
     }
 
-    images = this.state.showDate ? images.reverse() : images;
+    images = this.state.showDate ? images.slice().reverse() : images;
 
     const matchMedia = window.matchMedia("(max-width: 768px)").matches;
     const contentWrapper = matchMedia ? styles.contentWrapperMob : styles.contentWrapper;

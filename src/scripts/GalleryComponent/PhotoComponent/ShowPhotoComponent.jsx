@@ -22,6 +22,26 @@ class ShowPhotoComponent extends Component {
     this.removeClass = this.removeClass.bind(this)
   }
 
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress.bind(this), false)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress.bind(this), false)
+  }
+
+  handleKeyPress(event) {
+    if (event.key === 'ArrowRight') {
+      this.next()
+    }
+    if (event.key === 'ArrowLeft') {
+      this.prev()
+    }
+    if (event.key === 'Escape') {
+      this.removeClass()
+    }
+  }
+
   removeClass() {
     this.setState({modal: false});
     document.body.style.overflow = '';
@@ -45,6 +65,7 @@ class ShowPhotoComponent extends Component {
   }
 
   prev() {
+    console.log('prev');
     if (this.state.currentIndex > 0) {
       this.setState({currentIndex: this.state.currentIndex - 1})
     }

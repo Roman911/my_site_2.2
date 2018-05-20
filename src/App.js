@@ -8,8 +8,6 @@ import { GalleryComponent } from "./scripts/GalleryComponent/GalleryComponent";
 import { AboutComponent } from "./scripts/AboutComponent/AboutComponent"
 import { ContactsComponent } from "./scripts/ContactsComponent/ContactsComponent";
 
-import './App.css';
-
 import { css } from 'aphrodite/no-important';
 import styles from './styles/baseStyle';
 import {ScrollToTop} from "./scripts/ScrollToTop/ScrollToTop";

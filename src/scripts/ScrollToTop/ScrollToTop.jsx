@@ -4,21 +4,17 @@ import { css } from 'aphrodite/no-important';
 import styles from './ScrollToTopStyle'
 
 class ScrollToTop extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      intervalId: 0,
-      show: false
-    };
-    this.onScroll = this.onScroll.bind(this)
-  }
+  state = {
+    intervalId: 0,
+    show: false
+  };
 
   componentDidMount() {
-    document.addEventListener('scroll', this.onScroll, false)
+      document.addEventListener('scroll', this.onScroll.bind(this), false)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('scroll', this.onScroll, false)
+    document.removeEventListener('scroll', this.onScroll.bind(this), false)
   }
 
   onScroll() {

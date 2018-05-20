@@ -5,27 +5,24 @@ import { css } from 'aphrodite/no-important';
 import styles from './FormStyle'
 
 class FormComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
-    }
-  }
+  state = {
+    error: null,
+    isLoaded: false,
+    items: []
+  };
 
   handleClick() {
     fetch('./action.php', {
       method: 'post',
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         firstParam: 'yourValue',
         firstParam2: 'yourValue'
-      }),
-    });
+      })
+    })
   }
 
   render() {
