@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { headerItem } from "./header.config";
 import { FormComponent } from "./FormComponent/FormComponent";
 import { LinksComponent } from "./LinksComponent/LinksComponent";
@@ -10,7 +10,7 @@ import styles from './ContactsStyle';
 import style from './../../styles/baseStyle';
 import grid from './../../styles/gridStyles'
 
-class ContactsComponent extends Component{
+class ContactsComponent extends PureComponent {
 
   render() {
 

@@ -91,14 +91,16 @@ class ShowPhotoComponent extends Component {
 
     return <Fragment>
       <ColumnComponent img={img}/>
-      <ModalComponent
-        img={this.props.img}
-        currentIndex={this.state.currentIndex}
-        modal={this.state.modal}
-        removeClass={this.removeClass}
-        next={this.next.bind(this)}
-        prev={this.prev.bind(this)}
-      />
+      {this.state.modal &&
+        <ModalComponent
+          img={this.props.img}
+          currentIndex={this.state.currentIndex}
+          modal={this.state.modal}
+          removeClass={this.removeClass}
+          next={this.next.bind(this)}
+          prev={this.prev.bind(this)}
+        />
+      }
     </Fragment>
   }
 }

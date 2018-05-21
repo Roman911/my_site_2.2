@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { SlideComponent } from "./SlideComponent";
 import { DescriptionComponent } from "./DescriptionComponent";
 
@@ -11,6 +12,15 @@ class ModalComponent extends Component {
   state = {
     currentIndex: this.props.currentIndex
   };
+
+  componentWillMount() {
+    this.root = document.createElement('div');
+    document.body.appendChild(this.root)
+  }
+
+  componentWillUnmount() {
+    document.body.removeChild(this.root)
+  }
 
   next() {
     this.props.next(this.state.currentIndex);
@@ -41,9 +51,8 @@ class ModalComponent extends Component {
       />
     });
 
-    const show = this.props.modal ? styles.showed : '';
-
-    return <div className={css(styles.modalBg, show)}>
+    return ReactDOM.createPortal(
+    <div className={css(styles.modalBg)}>
       <div className={css(styles.relative)}>
         { slide }
         <div className={css(styles.btnOpacity)}>
@@ -57,7 +66,9 @@ class ModalComponent extends Component {
         </div>
       </div>
       <button className={css(styles.btnRemove)} onClick={this.props.removeClass}>X</button>
-    </div>
+    </div>,
+    this.root
+    );
   }
 }
 

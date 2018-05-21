@@ -4,7 +4,7 @@ import { $Gray, $lightGray, $Red } from "../../../styles/variables";
 
 export default StyleSheet.create({
   modalBg: {
-    display: 'none',
+    display: 'flex',
     position: 'fixed',
     top: 0,
     left: 0,
@@ -14,9 +14,6 @@ export default StyleSheet.create({
     zIndex: 10,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  showed: {
-    display: 'flex',
   },
   relative: {
     position: 'relative'

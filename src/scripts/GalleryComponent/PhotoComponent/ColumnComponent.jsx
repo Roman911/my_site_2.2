@@ -56,19 +56,19 @@ class ColumnComponent extends Component {
     let grids;
     if (window.matchMedia("(max-width: 576px)").matches) {
       grids = [
-        <div className={css(gridStyles.width100)}>{ img }</div>
+        <div key={'keyOneColumn'} className={css(gridStyles.width100)}>{ img }</div>
       ];
     } else if (window.matchMedia("(max-width: 768px)").matches) {
       grids = [
-        <div className={css(gridStyles.width50)}>{ imgColumn1 }</div>,
-        <div className={css(gridStyles.width50)}>{ imgColumn2 }</div>
+        <div key={'keyTwoColumn_1'} className={css(gridStyles.width50)}>{ imgColumn1 }</div>,
+        <div key={'keyTwoColumn_2'} className={css(gridStyles.width50)}>{ imgColumn2 }</div>
       ];
     } else {
       grids = [
-        <div className={css(gridStyles.width25)}>{ imgColumn1 }</div>,
-        <div className={css(gridStyles.width25)}>{ imgColumn2 }</div>,
-        <div className={css(gridStyles.width25)}>{ imgColumn3 }</div>,
-        <div className={css(gridStyles.width25)}>{ imgColumn4 }</div>
+        <div key={'keyThreeColumn_1'} className={css(gridStyles.width25)}>{ imgColumn1 }</div>,
+        <div key={'keyThreeColumn_2'} className={css(gridStyles.width25)}>{ imgColumn2 }</div>,
+        <div key={'keyThreeColumn_3'} className={css(gridStyles.width25)}>{ imgColumn3 }</div>,
+        <div key={'keyThreeColumn_4'} className={css(gridStyles.width25)}>{ imgColumn4 }</div>
       ];
     }
 

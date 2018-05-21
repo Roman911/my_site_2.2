@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import { HeaderComponent } from "./HeaderComponent/HeaderComponent";
 import { AboutComponent } from "../AboutComponent/AboutComponent";
 import { InsertComponent } from "./InsertComponent/InsertComponent";
@@ -8,7 +8,7 @@ import { ContactsComponent } from "../ContactsComponent/ContactsComponent";
 
 import { lang } from "../log/lang";
 
-class HomeComponent extends Component {
+class HomeComponent extends PureComponent {
 
   render() {
 

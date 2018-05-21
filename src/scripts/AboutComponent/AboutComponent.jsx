@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { HeaderComponent } from "./AboutHeaderComponent/HeaderComponent";
 import { MainComponent } from "./AboutMainComponent/MainComponent";
 import { PropertiesComponent } from "./AboutPropertiesComponent/PropertiesComponent";
@@ -8,7 +8,7 @@ import { css } from 'aphrodite/no-important';
 import style from './../../styles/baseStyle';
 import styles from './AboutStyle';
 
-class AboutComponent extends Component {
+class AboutComponent extends PureComponent {
 
   render() {
     return <section id="navAbout">
