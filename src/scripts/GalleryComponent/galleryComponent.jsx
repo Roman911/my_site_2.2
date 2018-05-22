@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { photoStore } from "../stores/photo.store";
 import { PhotoComponent } from "./PhotoComponent/PhotoComponent";
 import { itemControl } from "../ControlWindow/control.config";
@@ -16,7 +16,7 @@ import styles from './GalleryStyle';
 import style from './../ControlWindow/CategoriesComponent/CategoriesStyle';
 import grid from './../../styles/baseStyle';
 
-class GalleryComponent extends Component {
+class GalleryComponent extends PureComponent {
   state = {
     photo: [],
     showCategories: null,

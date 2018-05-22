@@ -1,33 +1,59 @@
 import React, { Component, Fragment } from 'react';
 import { formItem } from "./form.config";
+import { ModalComponent } from "./ModalComponent";
+
+import { lang } from "../../log/lang";
 
 import { css } from 'aphrodite/no-important';
-import styles from './FormStyle'
+import styles from './FormStyle';
+import style from './ModalStyle'
 
 class FormComponent extends Component {
   state = {
     error: null,
-    isLoaded: false,
-    items: []
+    modal: false,
+    name: '',
+    email: '',
+    text: ''
   };
 
+  onChangeHandlerName(event) {
+    this.setState({ name: event.target.value});
+  }
+
+  onChangeHandlerEmail(event) {
+    this.setState({ email: event.target.value});
+  }
+
+  onChangeHandlerText(event) {
+    this.setState({ text: event.target.value});
+  }
+
   handleClick() {
-    fetch('./action.php', {
-      method: 'post',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        firstParam: 'yourValue',
-        firstParam2: 'yourValue'
+    if (this.state.name === '') {
+      this.setState({modal: true, error: 'nameError'})
+    } else if (this.state.email === '') {
+      this.setState({modal: true, error: 'emailError'})
+    } else if (this.state.text === '') {
+      this.setState({modal: true, error: 'textError'})
+    } else {
+      this.setState({modal: true, error: 'error', name: '', email: '', text: ''});
+      fetch('./backend/action.php', {
+        method: 'post',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email,
+          text: this.state.text
+        })
       })
-    })
+    }
   }
 
   render() {
-
-    const lang= this.props.lang;
 
     const header = formItem.map((item, index) => {
       return <div key={index} className={css(styles.header)}>
@@ -35,20 +61,37 @@ class FormComponent extends Component {
       </div>
     });
 
+    const error = formItem.map((item, index) => {
+      if (this.state.error === 'nameError') {
+        return <p key={index} className={css(style.text)}>{ item.nameError[lang] }</p>
+      } else if (this.state.error === 'emailError') {
+        return <p key={index} className={css(style.text)}>{ item.emailError[lang] }</p>
+      } else if (this.state.error === 'textError') {
+        return <p key={index} className={css(style.text)}>{ item.textError[lang] }</p>
+      } else if (this.state.error === 'error') {
+        return <p key={index} className={css(style.text)}>{ item.error[lang] }</p>
+      }
+    });
+
     const inp = formItem.map((item, index) => {
       return <Fragment key={index}>
         <input
           className={css(styles.input)}
-          type="text" placeholder={ item.name[lang] } name="Name"
+          type="text" placeholder={ item.name[lang] }
+          onChange={this.onChangeHandlerName.bind(this)}
+          value={this.state.name}
         />
         <input
           className={css(styles.input)}
-          type="text" placeholder={ item.email[lang] }
-          name="Email"
+          type="email" placeholder={ item.email[lang] }
+          onChange={this.onChangeHandlerEmail.bind(this)}
+          value={this.state.email}
         />
         <textarea
           className={css(styles.input)}
           placeholder={ item.message[lang] }
+          onChange={this.onChangeHandlerText.bind(this)}
+          value={this.state.text}
           rows='5' name="Message"
         />
       </Fragment>
@@ -64,6 +107,11 @@ class FormComponent extends Component {
           <p className={css(styles.btn__text_red)}>it</p>
         </button>
       </div>
+      {this.state.modal &&
+        <ModalComponent
+          error={error}
+        />
+      }
     </div>
   }
 }
