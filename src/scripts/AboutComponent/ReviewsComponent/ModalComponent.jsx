@@ -6,11 +6,11 @@ import { lang } from "../../log/lang";
 
 import { css } from 'aphrodite/no-important';
 import styles from './ModalStyle';
-//import {skillsItem} from "./SkillsComponent/skills.config";
+import {skillsItem} from "./SkillsComponent/skills.config";
 
 export default class ModalComponent extends Component {
   state = {
-    currentIndexPhoto: null
+    currentIndexPhoto: undefined
   };
 
   handleClick(index) {
@@ -30,10 +30,20 @@ export default class ModalComponent extends Component {
       return <h5 key={index} className={css(styles.h5)}>{ item.subtitle[lang] }</h5>
     });
 
+    const sk = skillsItem.map((item, index) => {
+      return <div key={index} onClick={() => this.handleClick(index)}>
+        <SkillsComponent
+          class={item.class}
+          showed={this.state.currentIndexPhoto >= index}
+        />
+      </div>
+    });
+
     return <div className={css(styles.modalBg)}>
       <div className={css(styles.modal)}>
         { header }
         { subtitle }
+        { sk }
       </div>
     </div>
   }
