@@ -4,6 +4,12 @@ export default StyleSheet.create({
   pageWrapper: {
     boxSizing: 'border-box'
   },
+  pageS: {
+    margin: '0 auto',
+    height: '100%',
+    maxWidth: 768,
+    width: '100%'
+  },
   pageM: {
     margin: '0 auto',
     height: '100%',

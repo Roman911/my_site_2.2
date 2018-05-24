@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $white, $lightGray, $Gray, $lightBlack, $Red } from "../../../styles/variables";
+import { $white, $Gray } from "../../../styles/variables";
 
 export default StyleSheet.create({
   bgWindow: {

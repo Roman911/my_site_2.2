@@ -3,6 +3,7 @@ import { HeaderComponent } from "./AboutHeaderComponent/HeaderComponent";
 import { MainComponent } from "./AboutMainComponent/MainComponent";
 import { PropertiesComponent } from "./AboutPropertiesComponent/PropertiesComponent";
 import { BarComponent } from "./AboutBarComponent/BarComponent";
+import ReviewsComponent from "./ReviewsComponent/ReviewsComponent";
 
 import { css } from 'aphrodite/no-important';
 import style from './../../styles/baseStyle';
@@ -18,6 +19,7 @@ class AboutComponent extends PureComponent {
         <PropertiesComponent />
       </div>
       <BarComponent />
+      <ReviewsComponent/>
     </section>
   }
 }

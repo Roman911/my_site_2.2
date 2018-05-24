@@ -29,7 +29,7 @@ class FormComponent extends Component {
     this.setState({ text: event.target.value});
   }
 
-  handleClick() {
+  addModal() {
     if (this.state.name === '') {
       this.setState({modal: true, error: 'nameError'})
     } else if (this.state.email === '') {
@@ -37,20 +37,50 @@ class FormComponent extends Component {
     } else if (this.state.text === '') {
       this.setState({modal: true, error: 'textError'})
     } else {
-      this.setState({modal: true, error: 'error', name: '', email: '', text: ''});
-      fetch('./backend/action.php', {
-        method: 'post',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: this.state.name,
-          email: this.state.email,
-          text: this.state.text
-        })
-      })
+      this.setState({modal: true, error: 'error'});
     }
+  }
+
+  removeMod() {
+    this.setState({modal: false, error: null})
+  }
+
+  handleClick() {
+    this.addModal();
+    setTimeout(this.removeMod.bind(this), 2000);
+    this.state.name === '' ||  this.state.email === ''  || this.state.text === '' ||
+    this.setState({name: '', email: '', text: ''});
+    fetch('./backend/action.php', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        text: this.state.text
+      })
+    })
+  }
+
+  cliked() {
+    fetch('./backend/feedback.txt')
+      .then(function(response) {
+        console.log(response.headers.get('Content-Type')); // application/json; charset=utf-8
+        console.log(response.status); // 200
+
+        return response.text();
+      })
+      .then(function(user) {
+        let arr = JSON.parse(user);
+        console.log(arr); // iliakan
+        let arr2 = arr.map((item) => {
+          return item.name
+        });
+        console.log(arr2)
+      })
+      .catch( console.log );
   }
 
   render() {
@@ -62,15 +92,17 @@ class FormComponent extends Component {
     });
 
     const error = formItem.map((item, index) => {
+      let text;
       if (this.state.error === 'nameError') {
-        return <p key={index} className={css(style.text)}>{ item.nameError[lang] }</p>
+        text = <p key={index} className={css(style.text)}>{ item.nameError[lang] }</p>
       } else if (this.state.error === 'emailError') {
-        return <p key={index} className={css(style.text)}>{ item.emailError[lang] }</p>
+        text = <p key={index} className={css(style.text)}>{ item.emailError[lang] }</p>
       } else if (this.state.error === 'textError') {
-        return <p key={index} className={css(style.text)}>{ item.textError[lang] }</p>
+        text = <p key={index} className={css(style.text)}>{ item.textError[lang] }</p>
       } else if (this.state.error === 'error') {
-        return <p key={index} className={css(style.text)}>{ item.error[lang] }</p>
+        text = <p key={index} className={css(style.text)}>{ item.error[lang] }</p>
       }
+      return text
     });
 
     const inp = formItem.map((item, index) => {
@@ -107,6 +139,7 @@ class FormComponent extends Component {
           <p className={css(styles.btn__text_red)}>it</p>
         </button>
       </div>
+      <button onClick={() => this.cliked()}>x</button>
       {this.state.modal &&
         <ModalComponent
           error={error}
