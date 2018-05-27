@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { css } from 'aphrodite/no-important';
 import styles from './CategoriesStyle';
 
-class CategoriesComponent extends Component {
+export default class CategoriesComponent extends Component {
 
   render() {
 
@@ -31,5 +31,3 @@ class CategoriesComponent extends Component {
     </Fragment>
   }
 }
-
-export { CategoriesComponent };

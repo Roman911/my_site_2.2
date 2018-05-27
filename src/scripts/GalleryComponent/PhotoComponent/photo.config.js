@@ -1,4 +1,4 @@
-const photoItem = [
+export const photoItem = [
   {
     header: ['Мої роботи', 'Мои работи', 'MY WORK'],
     subtitle: [
@@ -13,5 +13,3 @@ const photoItem = [
     ]
   }
 ];
-
-export { photoItem };

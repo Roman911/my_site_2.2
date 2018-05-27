@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $white, $Gray } from "../../../styles/variables";
+import {$white, $Gray} from "../../../styles/variables";
 
 export default StyleSheet.create({
   bgWindow: {
@@ -20,10 +20,17 @@ export default StyleSheet.create({
     paddingBottom: 50,
     paddingLeft: 100,
     paddingRight: 100,
-    backgroundColor: $Gray
+    backgroundColor: $Gray,
+    '@media (max-width: 768px)': {
+      paddingTop: 25,
+      paddingBottom: 25,
+      paddingLeft: 40,
+      paddingRight: 40,
+      minWidth: 200
+    }
   },
   text: {
     textAlign: 'center',
     color: $white
-  }
+  },
 });

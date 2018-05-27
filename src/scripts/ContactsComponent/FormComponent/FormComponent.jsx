@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { formItem } from "./form.config";
-import { ModalComponent } from "./ModalComponent";
+import ModalComponent from "./ModalComponent";
 
 import { lang } from "../../log/lang";
 
@@ -8,7 +8,7 @@ import { css } from 'aphrodite/no-important';
 import styles from './FormStyle';
 import style from './ModalStyle'
 
-class FormComponent extends Component {
+export default class FormComponent extends Component {
   state = {
     error: null,
     modal: false,
@@ -62,25 +62,6 @@ class FormComponent extends Component {
         text: this.state.text
       })
     })
-  }
-
-  cliked() {
-    fetch('./backend/feedback.txt')
-      .then(function(response) {
-        console.log(response.headers.get('Content-Type')); // application/json; charset=utf-8
-        console.log(response.status); // 200
-
-        return response.text();
-      })
-      .then(function(user) {
-        let arr = JSON.parse(user);
-        console.log(arr); // iliakan
-        let arr2 = arr.map((item) => {
-          return item.name
-        });
-        console.log(arr2)
-      })
-      .catch( console.log );
   }
 
   render() {
@@ -139,7 +120,6 @@ class FormComponent extends Component {
           <p className={css(styles.btn__text_red)}>it</p>
         </button>
       </div>
-      <button onClick={() => this.cliked()}>x</button>
       {this.state.modal &&
         <ModalComponent
           error={error}
@@ -148,5 +128,3 @@ class FormComponent extends Component {
     </div>
   }
 }
-
-export { FormComponent };

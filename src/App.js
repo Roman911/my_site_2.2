@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { Route, Switch, HashRouter as Router } from 'react-router-dom';
-import { NavBarComponent } from "./scripts/navBarComponent/navBarComponent";
-import { Footer } from "./scripts/FooterComponent/FooterComponent";
-import { HomeComponent } from "./scripts/HomeComponent/HomeComponent";
-import { GalleryComponent } from "./scripts/GalleryComponent/GalleryComponent";
-import { AboutComponent } from "./scripts/AboutComponent/AboutComponent"
-import { ContactsComponent } from "./scripts/ContactsComponent/ContactsComponent";
+import NavBarComponent from "./scripts/navBarComponent/navBarComponent";
+import Footer from "./scripts/FooterComponent/FooterComponent";
+import HomeComponent from "./scripts/HomeComponent/HomeComponent";
+import GalleryComponent from "./scripts/GalleryComponent/GalleryComponent";
+import AboutComponent from "./scripts/AboutComponent/AboutComponent"
+import ContactsComponent from "./scripts/ContactsComponent/ContactsComponent";
+import ScrollToTop from "./scripts/ScrollToTop/ScrollToTop";
 
 import { css } from 'aphrodite/no-important';
 import styles from './styles/baseStyle';
-import {ScrollToTop} from "./scripts/ScrollToTop/ScrollToTop";
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <Router>
@@ -32,5 +32,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

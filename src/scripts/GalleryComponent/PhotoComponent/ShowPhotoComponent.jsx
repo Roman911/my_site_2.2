@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { ColumnComponent } from './ColumnComponent';
-import { ModalComponent } from "./ModalComponent";
+import ColumnComponent from './ColumnComponent';
+import ModalComponent from "./ModalComponent";
 
 import { css } from 'aphrodite/no-important';
 import styles from './ShowStyle';
 
-class ShowPhotoComponent extends Component {
+export default class ShowPhotoComponent extends Component {
   constructor(props) {
     super(props);
     const imgUrl = this.props.img.map((item) => {
@@ -104,5 +104,3 @@ class ShowPhotoComponent extends Component {
     </Fragment>
   }
 }
-
-export { ShowPhotoComponent };

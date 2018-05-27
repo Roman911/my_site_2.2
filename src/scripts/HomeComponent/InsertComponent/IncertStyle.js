@@ -24,6 +24,10 @@ export default StyleSheet.create({
   text: {
     textTransform: 'uppercase',
     letterSpacing: 16,
-    color: $white
+    color: $white,
+    '@media (max-width: 768px)': {
+      letterSpacing: 12,
+      fontSize: '1.9rem'
+    }
   }
 });

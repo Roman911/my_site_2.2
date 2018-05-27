@@ -1,4 +1,4 @@
-const navBarItems = [
+export const navBarItems = [
   {
     title: ['головна', 'главная', 'home'],
     route: '/home',
@@ -19,5 +19,3 @@ const navBarItems = [
     class: 'fas fa-address-book'
   }
 ];
-
-export { navBarItems };

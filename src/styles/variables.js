@@ -8,6 +8,5 @@ export const $Red = '#e45242';
 export const $lightBlue = '#b2becc';
 export const $Blue = '#667d98';
 
-
 export const $lightGray2 = '#adadad';
 export const $lightGray3 = '#929292';

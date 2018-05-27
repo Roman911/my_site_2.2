@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { SlideComponent } from "./SlideComponent";
-import { DescriptionComponent } from "./DescriptionComponent";
+import SlideComponent from "./SlideComponent";
+import DescriptionComponent from "./DescriptionComponent";
 
 import { lang } from "../../log/lang";
 
 import { css } from 'aphrodite/no-important';
 import styles from './ModalStyle';
 
-class ModalComponent extends Component {
+export default class ModalComponent extends Component {
   state = {
     currentIndex: this.props.currentIndex
   };
@@ -71,5 +71,3 @@ class ModalComponent extends Component {
     );
   }
 }
-
-export { ModalComponent };

@@ -1,4 +1,4 @@
-const headerItem = [
+export const headerItem = [
   {
     header: ['Контакти', 'Контакты', 'Contacts'],
     subtitle: [
@@ -8,5 +8,3 @@ const headerItem = [
     ]
   }
 ];
-
-export { headerItem };

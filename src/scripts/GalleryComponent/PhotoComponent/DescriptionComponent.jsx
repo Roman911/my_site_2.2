@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 import { css } from 'aphrodite/no-important';
 import styles from './DescriptionStyle';
 
-class DescriptionComponent extends Component {
+export default class DescriptionComponent extends Component {
   render() {
 
     const date = new Date(this.props.date);
     const dateForm = date.toLocaleDateString();
 
     const show = this.props.show ? styles.showed : '';
+
     return <div className={css(styles.description, show)}>
       <div className={css(styles.header)}>
         <h5 className={css(styles.text)}>{this.props.title}</h5>
@@ -20,5 +21,3 @@ class DescriptionComponent extends Component {
     </div>
   }
 }
-
-export { DescriptionComponent };

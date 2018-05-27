@@ -1,6 +1,7 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $darkWhite, $darkGray } from './../../../styles/variables';
+import { $darkWhite, $darkGray, $lightBlack, $lightGray } from './../../../styles/variables';
+import {$Gray, $Red} from "../../../styles/variables";
 
 export default StyleSheet.create({
   modalBg: {
@@ -20,17 +21,21 @@ export default StyleSheet.create({
     border: '2px solid',
     borderColor: $darkGray,
     boxShadow: '0 0 10px 4px #d6d6d6',
-    // maxWidth: 'calc(100vw - 50px)',
-    // maxHeight: 'calc(100vh - 50px)',
     width: 500,
-    height: 300
+    maxHeight: '100%',
+    '@media (max-width: 768px)': {
+      maxWidth: 'calc(100vw - 50px)'
+    }
   },
   header: {
     display: 'flex',
     alignItems: 'center',
     margin: 10,
     borderBottom: '2px solid',
-    borderBottomColor: $darkGray
+    borderBottomColor: $darkGray,
+    '@media (max-width: 768px)': {
+      margin: 5
+    }
   },
   h4: {
     marginLeft: 10
@@ -41,5 +46,62 @@ export default StyleSheet.create({
   },
   headerPhoto: {
     marginLeft: 15
+  },
+  btn: {
+    padding: 25,
+    display: 'flex',
+    justifyContent: 'center',
+    '@media (max-width: 768px)': {
+      padding: 10
+    }
+  },
+  button: {
+    paddingTop: 7,
+    paddingBottom: 7,
+    paddingLeft: 25,
+    paddingRight: 25,
+    backgroundColor: $lightBlack,
+    border: 'none',
+    cursor: 'pointer',
+    boxShadow: '0 0 5px 2px #777',
+    color: $lightGray,
+    fontSize: '1.1rem'
+  },
+  btn__text: {
+    display: 'inline',
+    color: $lightGray,
+    marginLeft: 15
+  },
+  btn__text_red: {
+    display: 'inline',
+    color: 'red'
+  },
+  btnRemove: {
+    boxSizing: 'border-box',
+    background: 'none',
+    border: '1px solid rgba(0, 0, 0, 0)',
+    paddingTop: 4,
+    paddingBottom: 4,
+    paddingRight: 11,
+    paddingLeft: 11,
+    position: 'absolute',
+    top: '1%',
+    right: '2%',
+    cursor: 'pointer',
+    color: $Gray,
+    fontSize: '1.3rem',
+    fontWeight: 500,
+    transition: '0.5s',
+    ':hover': {
+      boxSizing: 'border-box',
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderColor: $Red,
+      borderRadius: 17,
+      color: $lightGray,
+      backgroundColor: 'rgba(119,119,119,0.15)',
+      transformOrigin: 'center',
+      transform: 'rotate(180deg)'
+    }
   }
 });

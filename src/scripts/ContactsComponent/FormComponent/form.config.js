@@ -1,4 +1,4 @@
-const formItem = [
+export const formItem = [
   {
     header: [
       'Напишіть мені повідомлення і я відповім наяближчим часом',
@@ -13,5 +13,3 @@ const formItem = [
     error: ['Дякую!\n Я відповім Вам найближчим часом.', 'Спасибо!\n Я отвечу Вам в ближайшее время.', 'Thank you!\n I will answer you soon.']
   }
 ];
-
-export { formItem };

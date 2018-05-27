@@ -5,7 +5,10 @@ import { $lightGray, $lightBlack } from "../../../styles/variables";
 export default StyleSheet.create({
   item: {
     boxSizing: 'border-box',
-    paddingRight: 20
+    paddingRight: 20,
+    '@media (max-width: 768px)': {
+      paddingRight: 0
+    }
   },
   header: {
     marginBottom: 20,

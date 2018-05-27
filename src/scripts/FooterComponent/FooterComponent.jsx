@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { footerItem } from './footer.config'
-import {FooterLinks} from "./FooterLinks";
+import FooterLinks from "./FooterLinks";
 
 import { css } from 'aphrodite/no-important';
 import styles from './FoterStyle'
 
-class Footer extends Component {
+export default class Footer extends Component {
   render() {
     let date = new Date();
     let year = date.getFullYear();
     const link = footerItem.map((item, index) => {
-      return <FooterLinks key={index} href={item.href} target={item.target} class={item.class}/>;
+      return <FooterLinks key={index} href={item.href} target={item.target} classN={item.class}/>;
     });
     return <footer className={css(styles.footer)}>
       <div className={css(styles.contentWrapper)}>
@@ -24,5 +24,3 @@ class Footer extends Component {
     </footer>
   }
 }
-
-export { Footer };

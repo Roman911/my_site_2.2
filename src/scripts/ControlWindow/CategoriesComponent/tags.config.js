@@ -1,4 +1,4 @@
-const tags = [
+export const tags = [
   {
     tag: 'polina',
     name: [
@@ -72,5 +72,3 @@ const tags = [
     ]
   }
 ];
-
-export { tags };

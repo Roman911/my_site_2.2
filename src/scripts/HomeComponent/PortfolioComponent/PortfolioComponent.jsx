@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { HeaderPhotoComponent } from "../../GalleryComponent/PhotoComponent/HeaderPhotoComponent/HeaderPhotoComponent";
-import { ShowPhotoComponent } from "../../GalleryComponent/PhotoComponent/ShowPhotoComponent";
+import HeaderPhotoComponent from "../../GalleryComponent/PhotoComponent/HeaderPhotoComponent/HeaderPhotoComponent";
+import ShowPhotoComponent from "../../GalleryComponent/PhotoComponent/ShowPhotoComponent";
 
 import { css } from "aphrodite/no-important";
 import style from "../../../styles/baseStyle";
 import styles from './PortfolioStyle';
 import {photoStore} from "../../stores/photo.store";
 
-class PortfolioComponent extends Component {
+export default class PortfolioComponent extends Component {
   state = {
     photo: []
   };
@@ -47,5 +47,3 @@ class PortfolioComponent extends Component {
     </section>
   }
 }
-
-export { PortfolioComponent };

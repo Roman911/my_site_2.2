@@ -1,14 +1,14 @@
 import React, { PureComponent, Fragment } from 'react'
-import { HeaderComponent } from "./HeaderComponent/HeaderComponent";
-import { AboutComponent } from "../AboutComponent/AboutComponent";
-import { InsertComponent } from "./InsertComponent/InsertComponent";
+import HeaderComponent from "./HeaderComponent/HeaderComponent";
+import AboutComponent from "../AboutComponent/AboutComponent";
+import InsertComponent from "./InsertComponent/InsertComponent";
 import { insertItem } from "./InsertComponent/insert.config";
-import { PortfolioComponent } from "./PortfolioComponent/PortfolioComponent";
-import { ContactsComponent } from "../ContactsComponent/ContactsComponent";
+import PortfolioComponent from "./PortfolioComponent/PortfolioComponent";
+import ContactsComponent from "../ContactsComponent/ContactsComponent";
 
 import { lang } from "../log/lang";
 
-class HomeComponent extends PureComponent {
+export default class HomeComponent extends PureComponent {
 
   render() {
 
@@ -48,5 +48,3 @@ class HomeComponent extends PureComponent {
     </Fragment>
   }
 }
-
-export { HomeComponent };

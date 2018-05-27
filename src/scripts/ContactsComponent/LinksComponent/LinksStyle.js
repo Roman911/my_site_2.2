@@ -5,7 +5,10 @@ import { $Red } from "../../../styles/variables";
 export default StyleSheet.create({
   item: {
     boxSizing: 'border-box',
-    paddingLeft: 20
+    paddingLeft: 20,
+    '@media (max-width: 768px)': {
+      paddingLeft: 0
+    }
   },
   header: {
     marginBottom: 20,

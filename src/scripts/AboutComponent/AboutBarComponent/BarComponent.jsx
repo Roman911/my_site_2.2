@@ -6,7 +6,7 @@ import { lang } from "../../log/lang";
 import { css } from 'aphrodite/no-important';
 import styles from './BarStyle';
 
-class BarComponent extends Component {
+export default class BarComponent extends Component {
   render() {
     const item = barItem.map((item, index) => {
       return <div key={index} className={css(styles.item)}>
@@ -19,5 +19,3 @@ class BarComponent extends Component {
     </section>
   }
 }
-
-export { BarComponent };

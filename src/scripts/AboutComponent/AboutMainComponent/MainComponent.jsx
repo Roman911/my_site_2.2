@@ -7,7 +7,7 @@ import {css} from "aphrodite/no-important";
 import styles from "./MainStyle";
 import grid from "../../../styles/gridStyles";
 
-class MainComponent extends Component {
+export default class MainComponent extends Component {
   render() {
 
     let className;
@@ -31,5 +31,3 @@ class MainComponent extends Component {
     </div>
   }
 }
-
-export { MainComponent };

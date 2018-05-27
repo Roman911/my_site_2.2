@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import styles from "./ModalStyle";
 import {css} from "aphrodite/no-important";
 
-class ModalComponent extends Component {
+export default class ModalComponent extends Component {
 
   componentWillMount() {
     this.root = document.createElement('div');
@@ -26,5 +26,3 @@ class ModalComponent extends Component {
     );
   }
 }
-
-export { ModalComponent };

@@ -18,7 +18,6 @@ class PhotoStore extends EventEmitter {
     xhr.send();
 
     xhr.addEventListener('readystatechange',() => {
-      console.log(xhr.readyState);
       if(xhr.readyState === 4) {
         if(xhr.status === 200) {
           this._list = JSON.parse(xhr.response);

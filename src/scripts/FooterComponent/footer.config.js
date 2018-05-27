@@ -1,4 +1,4 @@
-const footerItem = [
+export const footerItem = [
   {
     href: 'https://www.facebook.com/romalysyk',
     target: '__blank',
@@ -25,5 +25,3 @@ const footerItem = [
     class: 'fab fa-twitter-square'
   }
 ];
-
-export { footerItem };

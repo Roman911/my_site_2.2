@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {contentItem} from "./../About.config";
 
 import { lang } from "../../log/lang";
@@ -6,7 +6,7 @@ import { lang } from "../../log/lang";
 import { css } from 'aphrodite/no-important';
 import styles from "./HeaderStyle";
 
-class HeaderComponent extends Component {
+export default class HeaderComponent extends Component {
   render() {
     const header = contentItem.map((item, index) => {
       return <div key={index} className={css(styles.item)}>
@@ -15,10 +15,8 @@ class HeaderComponent extends Component {
         <p className={css(styles.text)}>{item.text[lang]}</p>
       </div>;
     });
-    return <div>
+    return <Fragment>
       { header }
-    </div>
+    </Fragment>
   }
 }
-
-export { HeaderComponent };

@@ -6,7 +6,7 @@ import { lang } from "../../../log/lang";
 import {css} from "aphrodite/no-important";
 import styles from "../PhotoStyle";
 
-class HeaderPhotoComponent extends Component {
+export default class HeaderPhotoComponent extends Component {
 
   render() {
 
@@ -23,5 +23,3 @@ class HeaderPhotoComponent extends Component {
     </Fragment>
   }
 }
-
-export { HeaderPhotoComponent };

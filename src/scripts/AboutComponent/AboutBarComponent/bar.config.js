@@ -1,4 +1,4 @@
-const barItem = [
+export const barItem = [
   {
     subtitle: '6+',
     text: ['Років', 'Лет', 'Years']
@@ -12,5 +12,3 @@ const barItem = [
     text: ['Щасливих клієнтів', 'Щасливых клыентов', 'Happy Clients']
   }
 ];
-
-export { barItem };

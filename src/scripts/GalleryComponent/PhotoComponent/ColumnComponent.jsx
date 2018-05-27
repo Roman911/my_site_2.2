@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { css } from 'aphrodite/no-important';
 import gridStyles from './../../../styles/gridStyles';
 
-class ColumnComponent extends Component {
+export default class ColumnComponent extends Component {
 
   render() {
 
@@ -77,5 +77,3 @@ class ColumnComponent extends Component {
     </div>
   }
 }
-
-export { ColumnComponent };

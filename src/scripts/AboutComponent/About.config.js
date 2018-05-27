@@ -1,4 +1,4 @@
-const contentItem = [
+export const contentItem = [
   {
     aboutMe: ['про мене', 'обо мне', 'about me'],
     lovePhoto: ['Я люблю фотографувати', 'Я люблю фотографировать', 'I love photography'],
@@ -17,5 +17,3 @@ const contentItem = [
     subtitle: ['Я дійсно хороший в:', 'Я действительно хорош в:', 'Im really good at:']
   }
 ];
-
-export { contentItem };

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { photoStore } from "../stores/photo.store";
-import { PhotoComponent } from "./PhotoComponent/PhotoComponent";
+import PhotoComponent from "./PhotoComponent/PhotoComponent";
 import { itemControl } from "../ControlWindow/control.config";
 import { task } from "../ControlWindow/CategoriesComponent/Categories.config";
-import { CategoriesComponent } from "../ControlWindow/CategoriesComponent/CategoriesComponent";
+import CategoriesComponent from "../ControlWindow/CategoriesComponent/CategoriesComponent";
 import { taskDate } from "../ControlWindow/CategoriesComponent/date.config";
-import { DateComponent } from "../ControlWindow/CategoriesComponent/DateComponent";
+import DateComponent from "../ControlWindow/CategoriesComponent/DateComponent";
 import { tags } from "../ControlWindow/CategoriesComponent/tags.config";
-import { TagsComponent } from "../ControlWindow/CategoriesComponent/TagsComponent";
+import TagsComponent from "../ControlWindow/CategoriesComponent/TagsComponent";
 
 import { lang } from "../log/lang";
 
@@ -16,7 +16,7 @@ import styles from './GalleryStyle';
 import style from './../ControlWindow/CategoriesComponent/CategoriesStyle';
 import grid from './../../styles/baseStyle';
 
-class GalleryComponent extends Component {
+export default class GalleryComponent extends Component {
   state = {
     photo: [],
     showCategories: null,
@@ -196,5 +196,3 @@ class GalleryComponent extends Component {
     </section>
   }
 }
-
-export { GalleryComponent };

@@ -1,21 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { css } from 'aphrodite/no-important';
-import styles from './FooterLinksStyle'
+import styles from './FooterLinksStyle';
 
-class FooterLinks extends Component {
-  render() {
-    return <a
-      className={css(styles.link)}
-      href={this.props.href}
-      target={this.props.target}
-    >
-      <span className={css(styles.icon)}>
-        <i className={this.props.class}/>
-      </span>
-
-    </a>
-  }
+export default function FooterLinks({href, target, classN}) {
+  return <a
+    className={css(styles.link)}
+    href={href}
+    target={target}
+  >
+    <span className={css(styles.icon)}>
+      <i className={classN}/>
+    </span>
+  </a>
 }
-
-export { FooterLinks };

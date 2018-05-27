@@ -1,4 +1,4 @@
-const taskDate = [
+export const taskDate = [
   {
     name: 'date',
     title: [
@@ -13,5 +13,3 @@ const taskDate = [
     ]
   }
 ];
-
-export { taskDate };

@@ -7,7 +7,7 @@ import { lang } from "../log/lang";
 import { css } from 'aphrodite/no-important';
 import styles from './navBarStyle'
 
-class NavBarComponent extends Component {
+export default class NavBarComponent extends Component {
   state = {
     showed: false,
     fixed: false
@@ -92,5 +92,3 @@ class NavBarComponent extends Component {
     </Fragment>
   }
 }
-
-export { NavBarComponent };

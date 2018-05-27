@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { css } from 'aphrodite/no-important';
 import styles from './ScrollToTopStyle'
 
-class ScrollToTop extends Component {
+export default class ScrollToTop extends Component {
   state = {
     intervalId: 0,
     show: false
@@ -46,5 +46,3 @@ class ScrollToTop extends Component {
     </button>
   }
 }
-
-export { ScrollToTop };

@@ -1,4 +1,4 @@
-const itemControl = [
+export const itemControl = [
   {
     header: [
       'Вікно задач',
@@ -22,5 +22,3 @@ const itemControl = [
     ]
   }
 ];
-
-export { itemControl };

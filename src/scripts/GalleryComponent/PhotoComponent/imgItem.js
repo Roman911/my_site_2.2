@@ -1,4 +1,4 @@
-const imgItem = [
+export const imgItem = [
   {
     imgUrl: './photo_m_002.jpg',
     portret: true
@@ -39,5 +39,3 @@ const imgItem = [
     imgUrl: './photo_m_001.jpg'
   }
 ];
-
-export { imgItem }

@@ -1,4 +1,4 @@
-const task = [
+export const task = [
   {
     name: 'portrait',
     title: [
@@ -32,5 +32,3 @@ const task = [
     ]
   }
 ];
-
-export { task };

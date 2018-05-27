@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { css } from 'aphrodite/no-important';
 import styles from './CategoriesStyle';
 
-class DateComponent extends Component {
+export default class DateComponent extends Component {
   render() {
 
     const styleLine = this.props.show ? styles.lineShow : '';
@@ -32,5 +32,3 @@ class DateComponent extends Component {
     </Fragment>
   }
 }
-
-export { DateComponent };

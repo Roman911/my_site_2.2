@@ -4,7 +4,7 @@ import { linksItem } from "./links.config";
 import { css } from 'aphrodite/no-important';
 import styles from './LinksStyle'
 
-class LinksComponent extends Component {
+export default class LinksComponent extends Component {
 
   render() {
 
@@ -79,5 +79,3 @@ class LinksComponent extends Component {
     </div>
   }
 }
-
-export { LinksComponent };

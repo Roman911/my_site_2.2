@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { css } from 'aphrodite/no-important';
 import styles from './TagsStyles';
 
-class TagsComponent extends Component {
+export default class TagsComponent extends Component {
 
   render() {
 
@@ -15,5 +15,3 @@ class TagsComponent extends Component {
     </button>
   }
 }
-
-export { TagsComponent };

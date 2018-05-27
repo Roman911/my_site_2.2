@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { css } from 'aphrodite/no-important';
 import styles from './headerStyle'
 
-class HeaderComponent extends Component {
+export default class HeaderComponent extends Component {
 
   render() {
     let img;
@@ -13,12 +13,10 @@ class HeaderComponent extends Component {
       img = {backgroundImage: 'url("./assets/photo_002.jpg")'};
     }
 
-    return <section style={img} className={css(styles.header)} id="navHome">
+    return <section style={img} className={css(styles.header)}>
       <div className={css(styles.logo)}>
         <h3>ROMA_</h3><h3 className={css(styles.red)}>LI</h3>
       </div>
     </section>;
   }
 }
-
-export { HeaderComponent }

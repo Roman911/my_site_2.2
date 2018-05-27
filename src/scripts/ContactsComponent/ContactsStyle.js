@@ -10,8 +10,7 @@ export default StyleSheet.create({
     margin: 'auto'
   },
   border: {
-    borderWidth: 1,
-    borderStyle: 'solid',
+    border: '1px solid',
     borderColor: $lightGray,
     boxShadow: '0 0 5px 1px #929292'
   },
@@ -37,7 +36,10 @@ export default StyleSheet.create({
   },
   item: {
     boxSizing: 'border-box',
-    padding: 40
+    padding: 40,
+    '@media (max-width: 768px)': {
+      padding: 10,
+    }
   }
 });
 
