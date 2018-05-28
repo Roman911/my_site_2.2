@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { contentItem } from "../About.config";
+import { text2 } from "../About.variables";
+import img from './../../../assets/photo_003.jpg';
 
 import { lang } from "../../log/lang";
 
@@ -17,16 +18,12 @@ export default class MainComponent extends Component {
       className = grid.width50;
     }
 
-    const text = contentItem.map((item, index) => {
-      return <p key={index} className={css(styles.text)}>{item.text2[lang]}</p>
-    });
-
     return <div className={css(grid.gridContainer)}>
       <div className={css(className, styles.content)}>
-        <img className={css(styles.img)} src="./assets/photo_003.jpg" alt=""/>
+        <img className={css(styles.img)} src={ img } alt=""/>
       </div>
       <div className={css(className, styles.content)}>
-        { text }
+        <p className={css(styles.text)}>{ text2[lang] }</p>
       </div>
     </div>
   }

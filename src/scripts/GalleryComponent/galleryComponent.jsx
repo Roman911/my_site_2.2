@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { photoStore } from "../stores/photo.store";
 import PhotoComponent from "./PhotoComponent/PhotoComponent";
-import { itemControl } from "../ControlWindow/control.config";
+import { head, subtitle, subtitleDate, headerTag } from './Gallery.variables';
 import { task } from "../ControlWindow/CategoriesComponent/Categories.config";
 import CategoriesComponent from "../ControlWindow/CategoriesComponent/CategoriesComponent";
 import { taskDate } from "../ControlWindow/CategoriesComponent/date.config";
@@ -72,26 +72,6 @@ export default class GalleryComponent extends Component {
   }
 
   render() {
-
-    const header = itemControl.map((item, index) => {
-      return <div key={index} className={css(styles.windowHeader)}>
-        <p className={css(styles.text)}>{ item.header[lang] }</p>
-      </div>
-    });
-
-    const headerTags = itemControl.map((item, index) => {
-      return <div key={index} className={css(styles.windowHeader)}>
-        <p className={css(styles.text)}>{ item.headerTag[lang] }</p>
-      </div>
-    });
-
-    const subtitleCategories = itemControl.map((item, index) => {
-      return <p key={index} className={css(style.subtitle)}>{ item.subtitle[lang] }</p>
-    });
-
-    const subtitleDate = itemControl.map((item, index) => {
-      return <p key={index} className={css(style.subtitleDate)}>{ item.subtitleDate[lang] }</p>
-    });
 
     const checkbox = task.map((item, index) => {
       return <div key={index} onChange={() => this.toggleCategories(item.name, index)} >
@@ -171,22 +151,28 @@ export default class GalleryComponent extends Component {
         style={displayNone}
         className={css(styles.windowTaskMob)}
       >
-        { header }
+        <div className={css(styles.windowHeader)}>
+          <p className={css(styles.text)}>{ head[lang] }</p>
+        </div>
       </div>
       <div style={showed2} className={css(contentWrapper)}>
         <div style={borderNone} className={css(styles.windowTask)}>
-          { header }
+          <div className={css(styles.windowHeader)}>
+            <p className={css(styles.text)}>{ head[lang] }</p>
+          </div>
           <div style={textAlign} className={css(style.windowControl)}>
-            { subtitleCategories }
+            <p className={css(style.subtitle)}>{ subtitle[lang] }</p>
             { checkbox }
           </div>
           <div style={textAlign} className={css(style.windowControl)}>
-            { subtitleDate }
+            <p className={css(style.subtitleDate)}>{ subtitleDate[lang] }</p>
             { checkboxDate }
           </div>
         </div>
         <div style={borderNone} className={css(styles.windowTask)}>
-          { headerTags }
+          <div className={css(styles.windowHeader)}>
+            <p className={css(styles.text)}>{ headerTag[lang] }</p>
+          </div>
           <div className={css(style.windowControlTag)}>
             { tag }
           </div>

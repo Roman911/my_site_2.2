@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { reviewsModalItem } from "../reviewsModal.config";
+import { reviewSubtitle, headerPhoto, headerRetouch } from './../../About.variables';
 import { skillsItem } from "./skills.config";
 import SkillsPhotoComponent from './SkillsPhotoComponent';
 
@@ -19,18 +19,6 @@ export default class SkillsComponent extends Component {
   }
 
   render() {
-
-    const subtitle = reviewsModalItem.map((item, index) => {
-      return <h5 key={index}>{ item.subtitle[lang] }</h5>
-    });
-
-    const headPhoto = reviewsModalItem.map((item, index) => {
-      return <p key={index} className={css(styles.p)}>{ item.headerPhoto[lang] }</p>
-    });
-
-    const headRetouch = reviewsModalItem.map((item, index) => {
-      return <p key={index} className={css(styles.p)}>{ item.headerRetouch[lang] }</p>
-    });
 
     const skillsPhoto = skillsItem.map((item, index) => {
       return <div key={index} onClick={() => this.handleClickPhoto(index)}>
@@ -53,14 +41,14 @@ export default class SkillsComponent extends Component {
     });
 
     return <div className={css(styles.contentWrapper)} >
-      { subtitle }
-      { headPhoto }
+      <h5>{ reviewSubtitle[lang] }</h5>
+      <p className={css(styles.p)}>{ headerPhoto[lang] }</p>
       <div className={css(styles.block)}>
         <i className='far fa-thumbs-down'/>
         { skillsPhoto }
         <i className='far fa-thumbs-up'/>
       </div>
-      { headRetouch }
+      <p className={css(styles.p)}>{ headerRetouch[lang] }</p>
       <div className={css(styles.block)}>
         <i className='far fa-thumbs-down'/>
         { skillsRetouch }

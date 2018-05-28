@@ -1,22 +1,15 @@
-import React, { Component, Fragment } from 'react'
-import {contentItem} from "./../About.config";
+import React from 'react'
+import { aboutMe, lovePhoto, text } from "./../About.variables";
 
 import { lang } from "../../log/lang";
 
 import { css } from 'aphrodite/no-important';
 import styles from "./HeaderStyle";
 
-export default class HeaderComponent extends Component {
-  render() {
-    const header = contentItem.map((item, index) => {
-      return <div key={index} className={css(styles.item)}>
-        <h4 className={css(styles.header)}>{item.aboutMe[lang]}</h4>
-        <p className={css(styles.text, styles.subtitle)}>{item.lovePhoto[lang]}</p>
-        <p className={css(styles.text)}>{item.text[lang]}</p>
-      </div>;
-    });
-    return <Fragment>
-      { header }
-    </Fragment>
-  }
+export default function HeaderComponent() {
+  return <div className={css(styles.item)}>
+    <h4 className={css(styles.header)}>{aboutMe[lang]}</h4>
+    <p className={css(styles.text, styles.subtitle)}>{lovePhoto[lang]}</p>
+    <p className={css(styles.text)}>{text[lang]}</p>
+  </div>
 }

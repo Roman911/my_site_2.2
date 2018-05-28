@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import InputComponent from "./InputComponent/InputComponent";
 import { feedbackStore } from "../stores/feedback.store";
 import ConclusionDataComponent from "./ConclusionDataComponent";
+import { enter, data, iconEnter, iconData } from './NavBar.variables';
 
 import { lang } from "../log/lang";
 
@@ -55,12 +56,6 @@ export default class ModalComponent extends Component {
   }
 
   render() {
-
-    const enter = ['Вхід', 'Вход', 'Enter'];
-    const data = ['Дані', 'Данніе', 'Data'];
-
-    const iconEnter = 'fas fa-user';
-    const iconData = 'fas fa-archive';
 
     const feedback = this.state.feedbackData.slice().reverse();
 

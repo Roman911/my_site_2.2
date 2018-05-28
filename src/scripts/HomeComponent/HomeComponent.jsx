@@ -1,8 +1,8 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react';
 import HeaderComponent from "./HeaderComponent/HeaderComponent";
 import AboutComponent from "../AboutComponent/AboutComponent";
 import InsertComponent from "./InsertComponent/InsertComponent";
-import { insertItem } from "./InsertComponent/insert.config";
+import { namePortfolio, nameContacts } from './Home.variables';
 import PortfolioComponent from "./PortfolioComponent/PortfolioComponent";
 import ContactsComponent from "../ContactsComponent/ContactsComponent";
 
@@ -22,28 +22,18 @@ export default class HomeComponent extends PureComponent {
       background2 = {backgroundImage: 'url("./assets/bg_contacts.jpg")'};
     }
 
-    const insert = insertItem.map((item, index) => {
-      return <InsertComponent
-        key={index}
-        name={item.name[lang]}
-        background={background}
-      />
-    });
-
-    const insert2 = insertItem.map((item, index) => {
-      return <InsertComponent
-        key={index}
-        name={item.name2[lang]}
-        background={background2}
-      />
-    });
-
     return <Fragment>
       <HeaderComponent />
       <AboutComponent />
-      { insert }
+      <InsertComponent
+        name={namePortfolio[lang]}
+        background={background}
+      />
       <PortfolioComponent />
-      { insert2 }
+      <InsertComponent
+        name={nameContacts[lang]}
+        background={background2}
+      />
       <ContactsComponent />
     </Fragment>
   }

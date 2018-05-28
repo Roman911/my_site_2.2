@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { reviewsModalItem } from "./reviewsModal.config";
+import { header } from "./../About.variables";
 import SkillsComponent from "./SkillsComponent/SkillsComponent";
 import InputComponent from "./InputComponent/InputComponent";
 
@@ -72,17 +72,13 @@ export default class ModalComponent extends Component {
 
   render() {
 
-    const header = reviewsModalItem.map((item, index) => {
-      return <div key={index} className={css(styles.header)}>
-        <i style={{fontSize: '1.3rem'}} className='far fa-comments'/>
-        <h4 className={css(styles.h4)}>{ item.header[lang] }</h4>
-      </div>
-    });
-
     return ReactDOM.createPortal(
       <div className={css(styles.modalBg)}>
         <div className={css(styles.modal)}>
-          { header }
+          <div className={css(styles.header)}>
+            <i style={{fontSize: '1.3rem'}} className='far fa-comments'/>
+            <h4 className={css(styles.h4)}>{ header[lang] }</h4>
+          </div>
           <SkillsComponent
             onAddCIPhoto={this.onAddCIPhoto.bind(this)}
             onAddCIRetouch={this.onAddCIRetouch.bind(this)}

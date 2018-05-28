@@ -1,25 +1,19 @@
-import React, { PureComponent } from 'react'
-import { headerItem } from "./header.config";
+import React, { PureComponent } from 'react';
+import { header, subtitle } from './Contacts.variables';
 import FormComponent from "./FormComponent/FormComponent";
 import LinksComponent from "./LinksComponent/LinksComponent";
+import img from './../../assets/photo_17.jpg'
 
 import { lang } from "../log/lang";
 
 import { css } from 'aphrodite/no-important';
 import styles from './ContactsStyle';
 import style from './../../styles/baseStyle';
-import grid from './../../styles/gridStyles'
+import grid from './../../styles/gridStyles';
 
 export default class ContactsComponent extends PureComponent {
 
   render() {
-
-    const header = headerItem.map((item, index) => {
-      return <div key={index} className={css(styles.header)}>
-        <h2 className={css(styles.headerText)}>{ item.header[lang] }</h2>
-        <p className={css(styles.subtitle)}>{ item.subtitle[lang] }</p>
-      </div>
-    });
 
     let width;
     let width2;
@@ -38,19 +32,22 @@ export default class ContactsComponent extends PureComponent {
       width3 = grid.width50
     }
 
-    const border = this.props.border ? styles.border : '';
+    const border = this.props.border ? styles.border : styles.borderNone;
 
     return <section className={css(style.pageM, styles.contentWrapper)}>
       <div className={css(border)}>
-        { header }
+        <div className={css(styles.header)}>
+          <h2 className={css(styles.headerText)}>{ header[lang] }</h2>
+          <p className={css(styles.subtitle)}>{ subtitle[lang] }</p>
+        </div>
         <div className={css(grid.gridContainer)}>
           <div className={css(styles.fontSize, width)}>
-            <img className={css(styles.img)} src='./assets/photo_17.jpg' alt=""/>
+            <img className={css(styles.img)} src={ img } alt=""/>
           </div>
           <div className={css(width2)}>
             <div className={css(grid.gridContainer, styles.item)}>
               <FormComponent width={width3} lang={lang} />
-              <LinksComponent width={width3} lang={lang} />
+              <LinksComponent width={width3} />
             </div>
           </div>
         </div>

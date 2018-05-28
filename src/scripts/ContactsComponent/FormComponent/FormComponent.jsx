@@ -1,12 +1,12 @@
-import React, { Component, Fragment } from 'react';
-import { formItem } from "./form.config";
+import React, { Component } from 'react';
+import { formHeader, name, email, message, nameError, emailError, textError, errorOk } from './../Contacts.variables';
 import ModalComponent from "./ModalComponent";
 
 import { lang } from "../../log/lang";
 
 import { css } from 'aphrodite/no-important';
 import styles from './FormStyle';
-import style from './ModalStyle'
+import style from './ModalStyle';
 
 export default class FormComponent extends Component {
   state = {
@@ -67,53 +67,40 @@ export default class FormComponent extends Component {
 
   render() {
 
-    const header = formItem.map((item, index) => {
-      return <div key={index} className={css(styles.header)}>
-        <p className={css(styles.text)}>{ item.header[lang] }</p>
-      </div>
-    });
-
-    const error = formItem.map((item, index) => {
-      let text;
-      if (this.state.error === 'nameError') {
-        text = <p key={index} className={css(style.text)}>{ item.nameError[lang] }</p>
-      } else if (this.state.error === 'emailError') {
-        text = <p key={index} className={css(style.text)}>{ item.emailError[lang] }</p>
-      } else if (this.state.error === 'textError') {
-        text = <p key={index} className={css(style.text)}>{ item.textError[lang] }</p>
-      } else if (this.state.error === 'error') {
-        text = <p key={index} className={css(style.text)}>{ item.error[lang] }</p>
-      }
-      return text
-    });
-
-    const inp = formItem.map((item, index) => {
-      return <Fragment key={index}>
-        <input
-          className={css(styles.input)}
-          type="text" placeholder={ item.name[lang] }
-          onChange={this.onChangeHandlerName.bind(this)}
-          value={this.state.name}
-        />
-        <input
-          className={css(styles.input)}
-          type="email" placeholder={ item.email[lang] }
-          onChange={this.onChangeHandlerEmail.bind(this)}
-          value={this.state.email}
-        />
-        <textarea
-          className={css(styles.input)}
-          placeholder={ item.message[lang] }
-          onChange={this.onChangeHandlerText.bind(this)}
-          value={this.state.text}
-          rows='5' name="Message"
-        />
-      </Fragment>
-    });
+    let error;
+    if (this.state.error === 'nameError') {
+      error = <p className={css(style.text)}>{ nameError[lang] }</p>
+    } else if (this.state.error === 'emailError') {
+      error = <p className={css(style.text)}>{ emailError[lang] }</p>
+    } else if (this.state.error === 'textError') {
+      error = <p className={css(style.text)}>{ textError[lang] }</p>
+    } else if (this.state.error === 'error') {
+      error = <p className={css(style.text)}>{ errorOk[lang] }</p>
+    }
 
     return <div className={css(this.props.width, styles.item)}>
-      { header }
-      { inp }
+      <div className={css(styles.header)}>
+        <p className={css(styles.text)}>{ formHeader[lang] }</p>
+      </div>
+      <input
+        className={css(styles.input)}
+        type="text" placeholder={ name[lang] }
+        onChange={this.onChangeHandlerName.bind(this)}
+        value={this.state.name}
+      />
+      <input
+        className={css(styles.input)}
+        type="email" placeholder={ email[lang] }
+        onChange={this.onChangeHandlerEmail.bind(this)}
+        value={this.state.email}
+      />
+      <textarea
+        className={css(styles.input)}
+        placeholder={ message[lang] }
+        onChange={this.onChangeHandlerText.bind(this)}
+        value={this.state.text}
+        rows='5' name="Message"
+      />
       <div className={css(styles.btn)}>
         <button onClick={() => this.handleClick()} className={css(styles.button)}>
           <i className='fab fa-telegram-plane'/>
@@ -123,7 +110,7 @@ export default class FormComponent extends Component {
       </div>
       {this.state.modal &&
         <ModalComponent
-          error={error}
+          error={ error }
         />
       }
     </div>

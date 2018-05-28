@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { header, name, password, error } from './../NavBar.variables';
 
 import { lang } from "../../log/lang";
 
@@ -16,11 +17,6 @@ export default class InputComponent extends Component {
   }
 
   render() {
-
-    const header = ['Введіть логін і пароль', 'Введите логин и пароль', 'Enter login and password'];
-    const name = ['Введіть логін', 'Введите логин', 'Enter login'];
-    const password = ['Введіть пароль', 'Введите пароль', 'Enter password'];
-    const error = ['Неправильний логін чи пароль', 'Неверный логин или пароль', 'Wrong login or password'];
 
     return <div className={css(styles.contentWrapper)}>
       <h5>{ header[lang] }</h5>

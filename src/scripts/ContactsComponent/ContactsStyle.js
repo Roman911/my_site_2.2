@@ -14,6 +14,9 @@ export default StyleSheet.create({
     borderColor: $lightGray,
     boxShadow: '0 0 5px 1px #929292'
   },
+  borderNone: {
+    border: 'none'
+  },
   header: {
     marginTop: 25,
     marginBottom: 25,
