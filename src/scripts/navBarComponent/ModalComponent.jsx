@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import InputComponent from "./InputComponent/InputComponent";
+import { feedbackStore } from "../stores/feedback.store";
+import ConclusionDataComponent from "./ConclusionDataComponent";
 
 import { lang } from "../log/lang";
 
@@ -12,6 +14,7 @@ export default class ModalComponent extends Component {
     name: '',
     passive: '',
     data: false,
+    feedbackData: [],
     error: false
   };
 
@@ -34,8 +37,8 @@ export default class ModalComponent extends Component {
   }
 
   handleClick() {
-    if ( this.state.name === '1') {
-      if (this.state.password === '1') {
+    if ( this.state.name === 'Admin') {
+      if (this.state.password === 'Admin') {
         this.setState({ data: true, error: false });
         this.addItem()
       }
@@ -45,22 +48,10 @@ export default class ModalComponent extends Component {
   }
 
   addItem() {
-    fetch('./backend/Review.txt')
-      .then(function(response) {
-        console.log(response.headers.get('Content-Type')); // application/json; charset=utf-8
-        console.log(response.status); // 200
-
-        return response.text();
-      })
-      .then(function(user) {
-        let arr = JSON.parse(user);
-        console.log(arr); // iliakan
-        let arr2 = arr.map((item) => {
-          return item.name
-        });
-        console.log(arr2)
-      })
-      .catch( console.log );
+    feedbackStore.subscribe('dataChanged', (item) => {
+      this.setState({ feedbackData: item })
+    });
+    feedbackStore.getList()
   }
 
   render() {
@@ -70,6 +61,19 @@ export default class ModalComponent extends Component {
 
     const iconEnter = 'fas fa-user';
     const iconData = 'fas fa-archive';
+
+    const feedback = this.state.feedbackData.slice().reverse();
+
+    const conclusionData = feedback.map((item, index) => {
+      return <div key={index} className={css(styles.feedbackWrapper)}>
+        <ConclusionDataComponent
+          name={item.name}
+          date={item.date}
+          email={item.email}
+          text={item.text}
+        />
+      </div>
+    });
 
     return ReactDOM.createPortal(
       <div className={css(styles.modalBg)}>
@@ -92,6 +96,10 @@ export default class ModalComponent extends Component {
               </button>
             </div>
           </Fragment>}
+          {
+            this.state.data &&
+            conclusionData
+          }
           <button onClick={() => this.props.removeModal()} className={css(styles.btnRemove)} >X</button>
         </div>
       </div>,

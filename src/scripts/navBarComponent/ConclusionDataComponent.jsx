@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
-import DateTime from './../../DataTime/DataTime';
+import DateTime from './../DataTime/DataTime';
 
 import { css } from 'aphrodite/no-important';
-import styles from './../../../styles/ConclusionReviewsStyle';
+import styles from './../../styles/ConclusionReviewsStyle';
 
-export default function ConclusionReviewsComponent({name, date, review}) {
+export default function ConclusionReviewsComponent({name, date, email, text}) {
 
   return <Fragment>
     <div className={css(styles.header)}>
@@ -16,6 +16,7 @@ export default function ConclusionReviewsComponent({name, date, review}) {
         <DateTime value={ date } format='DD MMMM YYYY'/>
       </div>
     </div>
-    <p>{ review }</p>
+    <p>{ email }</p>
+    <p>{ text }</p>
   </Fragment>
 }

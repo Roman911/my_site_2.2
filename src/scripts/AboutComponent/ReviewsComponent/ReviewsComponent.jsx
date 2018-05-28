@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { reviewsItem } from "./reviews.config";
 import ModalComponent from "./ModalComponent";
+import ConclusionReviewsComponent from "./ConclusionReviewsComponent";
 
 import { lang } from "../../log/lang";
 
 import { css } from 'aphrodite/no-important';
 import style from './../../../styles/baseStyle';
 import styles from './ReviewsStyle';
-import ConclusionReviewsComponent from "./ConclusionReviewsComponent";
 
 export default class ReviewsComponent extends Component {
   state = {

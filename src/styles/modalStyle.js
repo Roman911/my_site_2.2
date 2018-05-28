@@ -102,5 +102,10 @@ export default StyleSheet.create({
       transformOrigin: 'center',
       transform: 'rotate(180deg)'
     }
+  },
+  feedbackWrapper: {
+    padding: '15px 10px',
+    borderBottom: '1px solid',
+    borderColor: $Gray
   }
 });
