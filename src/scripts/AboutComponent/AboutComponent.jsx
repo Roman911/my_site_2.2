@@ -12,7 +12,8 @@ import styles from './AboutStyle';
 
 export default class AboutComponent extends PureComponent {
   state = {
-    review: []
+    review: [],
+    reviewNew: null
   };
 
   componentDidMount() {
@@ -29,15 +30,29 @@ export default class AboutComponent extends PureComponent {
     reviewStore.getList()
   }
 
+  addReview(review) {
+    this.setState({ reviewNew: review })
+  }
+
   render() {
+
+    let review = this.state.review;
+    const reviewNew = this.state.reviewNew;
+
+    if (this.state.reviewNew !== null) {
+      review.push(reviewNew)
+    }
+
+    let reviewReverse = review.reverse();
+
     return <Fragment>
       <div className={css(style.pageM, styles.pageWrapper)}>
         <HeaderComponent />
         <MainComponent />
-        <PropertiesComponent review={this.state.review}/>
+        <PropertiesComponent review={reviewReverse}/>
       </div>
       <BarComponent/>
-      <ReviewsComponent review={this.state.review}/>
+      <ReviewsComponent addReview={this.addReview.bind(this)} review={reviewReverse}/>
     </Fragment>
   }
 }

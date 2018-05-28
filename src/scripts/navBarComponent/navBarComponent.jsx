@@ -6,11 +6,13 @@ import { lang } from "../log/lang";
 
 import { css } from 'aphrodite/no-important';
 import styles from './navBarStyle'
+import ModalComponent from "./ModalComponent";
 
 export default class NavBarComponent extends Component {
   state = {
     showed: false,
-    fixed: false
+    fixed: false,
+    modal: false
   };
 
   componentDidMount() {
@@ -40,6 +42,16 @@ export default class NavBarComponent extends Component {
 
   removeClick() {
     this.setState({showed: false});
+    document.body.style.overflow = '';
+  }
+
+  showedModal() {
+    this.setState({ modal: true });
+    document.body.style.overflow = 'hidden';
+  }
+
+  removeModal() {
+    this.setState({ modal: false });
     document.body.style.overflow = '';
   }
 
@@ -87,8 +99,16 @@ export default class NavBarComponent extends Component {
         </div>
       </div>
       <div className={css(styles.navBarDeskTop, showed_deskTop, fixed)}>
-        {links}
+        <div className={css(styles.navBarMenu)}>
+          {links}
+        </div>
+        <div className={css(styles.navBarUser)}>
+          <div onClick={() => this.showedModal()} className={css(styles.navBarLink, styles.navBarLinkUser)}>
+            <i className='fas fa-ellipsis-v'/>
+          </div>
+        </div>
       </div>
+      { this.state.modal && <ModalComponent removeModal={this.removeModal.bind(this)}/> }
     </Fragment>
   }
 }

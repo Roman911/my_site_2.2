@@ -63,8 +63,8 @@ export default StyleSheet.create({
     position: 'absolute',
     top: 0,
     width: '100%',
-    justifyContent: 'start',
     alignContent: 'center',
+    justifyContent: 'space-between',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     boxShadow: '0 0 5px 5px rgb(119, 119, 119)',
     zIndex: 1,
@@ -75,6 +75,21 @@ export default StyleSheet.create({
     display: 'flex'
   },
 
+  navBarMenu: {
+    display: 'flex',
+    justifyContent: 'start',
+  },
+
+  navBarUser: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+
+  navBarLinkUser: {
+    paddingLeft: '1rem',
+    paddingRight: '1rem',
+    cursor: 'pointer'
+  },
 
   navBarLink: {
     paddingTop: '0.8rem',

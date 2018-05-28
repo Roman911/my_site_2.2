@@ -1,7 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $darkWhite, $darkGray, $lightBlack, $lightGray } from './../../../styles/variables';
-import {$Gray, $Red} from "../../../styles/variables";
+import { $darkWhite, $darkGray, $lightBlack, $lightGray, $Gray, $Red } from './variables';
 
 export default StyleSheet.create({
   modalBg: {

@@ -59,7 +59,8 @@ export default class FormComponent extends Component {
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
-        text: this.state.text
+        text: this.state.text,
+        date: new Date()
       })
     })
   }

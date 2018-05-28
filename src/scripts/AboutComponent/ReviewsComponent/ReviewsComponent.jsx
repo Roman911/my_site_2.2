@@ -55,8 +55,7 @@ export default class ReviewsComponent extends Component {
       </div>
     });
 
-    const review = this.props.review.slice().reverse();
-    const conclusionReviews = review.map((item, index) => {
+    const conclusionReviews = this.props.review.map((item, index) => {
       return <div key={index} className={css(styles.reviewWrapper)}>
         <ConclusionReviewsComponent
           name={item.name}
@@ -72,7 +71,7 @@ export default class ReviewsComponent extends Component {
         { conclusionReviews }
       </div>
       {this.state.modal &&
-        <ModalComponent removeModal={this.removeModal.bind(this)}/>
+        <ModalComponent addReview={this.props.addReview.bind(this)} removeModal={this.removeModal.bind(this)}/>
       }
     </div>
   }

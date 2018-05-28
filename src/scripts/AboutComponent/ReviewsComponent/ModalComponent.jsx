@@ -7,14 +7,15 @@ import InputComponent from "./InputComponent/InputComponent";
 import { lang } from "../../log/lang";
 
 import { css } from 'aphrodite/no-important';
-import styles from './ModalStyle';
+import styles from './../../../styles/modalStyle';
 
 export default class ModalComponent extends Component {
   state = {
     currentIndexPhoto: undefined,
     currentIndexRetouch: undefined,
     name: '',
-    review: ''
+    review: '',
+    date: new Date()
   };
 
   componentWillMount() {
@@ -52,6 +53,7 @@ export default class ModalComponent extends Component {
 
   handleClick() {
     this.props.removeModal();
+    this.props.addReview(this.state);
     fetch('./backend/actionReview.php', {
       method: 'post',
       headers: {
