@@ -2,8 +2,7 @@ import { StyleSheet } from 'aphrodite/no-important';
 
 export default StyleSheet.create({
   contentWrapper: {
-    paddingLeft: 15,
-    paddingRight: 15
+    padding: '0 15px'
   },
   input: {
     boxSizing: 'border-box',

@@ -19,7 +19,7 @@ export default StyleSheet.create({
     position: 'absolute',
     width: '100%',
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    boxShadow: '0 0 5px 5px rgb(119, 119, 119)',
+    boxShadow: `0 0 5px 5px ${$Gray}`,
     zIndex: 1
   },
 
@@ -29,9 +29,7 @@ export default StyleSheet.create({
 
   btn: {
     fontSize: '2.5rem',
-    marginTop: 10,
-    marginBottom: 10,
-    marginLeft: 20,
+    margin: '10px 0 10px 20px',
     color: $Gray
   },
 
@@ -66,7 +64,7 @@ export default StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'space-between',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    boxShadow: '0 0 5px 5px rgb(119, 119, 119)',
+    boxShadow: `0 0 5px 5px ${$Gray}`,
     zIndex: 1,
     fontFamily: 'Font Awesome'
   },
@@ -86,16 +84,13 @@ export default StyleSheet.create({
   },
 
   navBarLinkUser: {
-    paddingLeft: '1rem',
-    paddingRight: '1rem',
+    height: '100%',
+    padding: '0 1rem',
     cursor: 'pointer'
   },
 
   navBarLink: {
-    paddingTop: '0.8rem',
-    paddingBottom: '0.8rem',
-    paddingLeft: '1.8rem',
-    paddingRight: '1.8rem',
+    padding: '0.8rem 1.8rem',
     display: 'flex',
     alignItems: 'center',
     fontSize: '1.2rem',

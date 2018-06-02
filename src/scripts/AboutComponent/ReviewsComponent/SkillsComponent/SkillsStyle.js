@@ -4,13 +4,11 @@ import { $Gray, $darkGray, $Red, $Blue } from './../../../../styles/variables'
 
 export default StyleSheet.create({
   contentWrapper: {
-    paddingLeft: 15,
-    paddingRight: 15
+    padding: '0 15px'
   },
   block: {
-    borderTop: '1px solid',
-    borderBottom: '1px solid',
-    borderColor: $darkGray,
+    borderTop: `1px solid ${$darkGray}`,
+    borderBottom: `1px solid ${$darkGray}`,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -21,16 +19,13 @@ export default StyleSheet.create({
     }
   },
   p: {
-    marginTop: 15,
-    marginBottom: 15
+    margin: '15px 0'
   },
   item: {
-    marginLeft: 15,
-    marginRight: 15,
+    margin: '0 15px',
     cursor: 'pointer',
     '@media (max-width: 768px)': {
-      marginLeft: 5,
-      marginRight: 5,
+      margin: '0 5px'
     }
   },
   itemNoActive: {

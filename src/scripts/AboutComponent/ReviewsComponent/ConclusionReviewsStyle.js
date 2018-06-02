@@ -14,8 +14,7 @@ export default StyleSheet.create({
   icon: {
     fontSize: '0.4rem',
     color: $lightGray,
-    marginLeft: 10,
-    marginRight: 10
+    margin: '0 10px'
   },
   date: {
     color: $darkGray,

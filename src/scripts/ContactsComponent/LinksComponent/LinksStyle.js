@@ -18,8 +18,7 @@ export default StyleSheet.create({
     fontStyle: 'italic'
   },
   links: {
-    marginTop: 10,
-    marginBottom: 10
+    margin: '10px 0'
   },
   span: {
     margin: 5

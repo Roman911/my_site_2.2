@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $white, $Gray } from "../../styles/variables";
+import { $white, $Gray, $lightGray3 } from "../../styles/variables";
 
 export default StyleSheet.create({
   gallery: {
@@ -10,21 +10,17 @@ export default StyleSheet.create({
   },
   contentWrapper: {
     width: 250,
-    paddingLeft: 5,
-    paddingRight: 5
+    padding: '0 5px'
   },
   windowTask: {
     boxSizing: 'border-box',
     marginBottom: 10,
     paddingBottom: 7,
-    boxShadow: '0 0 5px 1px #929292',
+    boxShadow: `0 0 5px 1px ${$lightGray3}`
   },
   windowHeader: {
     boxSizing: 'border-box',
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 25,
-    paddingRight: 25,
+    padding: '10px 25px',
     backgroundColor: $Gray
   },
   text: {

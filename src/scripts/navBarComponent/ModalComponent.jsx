@@ -9,6 +9,7 @@ import { lang } from "../log/lang";
 
 import {css} from "aphrodite/no-important";
 import styles from "./../../styles/modalStyle";
+import style from './ModalStyle';
 
 export default class ModalComponent extends Component {
   state = {
@@ -18,7 +19,6 @@ export default class ModalComponent extends Component {
     feedbackData: [],
     error: false
   };
-
 
   componentWillMount() {
     this.root = document.createElement('div');
@@ -57,7 +57,7 @@ export default class ModalComponent extends Component {
 
   render() {
 
-    const feedback = this.state.feedbackData.slice().reverse();
+    const feedback = this.state.feedbackData.reverse();
 
     const conclusionData = feedback.map((item, index) => {
       return <div key={index} className={css(styles.feedbackWrapper)}>
@@ -72,7 +72,7 @@ export default class ModalComponent extends Component {
 
     return ReactDOM.createPortal(
       <div className={css(styles.modalBg)}>
-        <div className={css(styles.modal)}>
+        <div className={css(styles.modal, style.modalOv)}>
           <div className={css(styles.header)}>
             <i style={{fontSize: '1.3rem', color: '#4d4d4d'}} className={ this.state.data ? iconData : iconEnter }/>
             <h4 className={css(styles.h4)}>{ this.state.data ? data[lang] : enter[lang] }</h4>

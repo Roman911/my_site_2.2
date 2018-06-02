@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $darkGray } from "../../../styles/variables";
+import { $white, $darkGray } from "../../../styles/variables";
 
 export default StyleSheet.create({
   bar: {
@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    color: 'white'
+    color: $white
   },
   subtitle: {
     margin: 9,

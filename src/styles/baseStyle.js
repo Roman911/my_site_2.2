@@ -17,10 +17,7 @@ export default StyleSheet.create({
     width: '100%'
   },
   pageL: {
-    paddingTop: 64,
-    paddingBottom: 64,
-    paddingLeft: 5,
-    paddingRight: 5,
+    padding: '64px 5px',
     margin: 'auto',
     height: '100%',
     maxWidth: 1220

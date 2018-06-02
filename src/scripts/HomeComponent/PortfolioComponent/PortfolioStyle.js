@@ -1,28 +1,23 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $darkWhite, $lightBlack, $Red } from "../../../styles/variables";
+import { $darkWhite, $Gray, $lightBlack, $Red } from "../../../styles/variables";
 
 export default StyleSheet.create({
   contentWrapper: {
-    marginLeft: 5,
-    marginRight: 5,
+    margin: '0 5px',
     textAlign: 'center',
   },
   btn: {
-    marginTop: 45,
-    marginBottom: 25
+    margin: '45px 0 25px'
   },
   button: {
-    paddingTop: 4,
-    paddingBottom: 4,
-    paddingLeft: 30,
-    paddingRight: 30,
+    padding: '4px 30px',
     backgroundColor: $lightBlack,
     border: 'none',
     fontSize: '1.4rem',
     cursor: 'pointer',
     transaction: '0.5s',
-    boxShadow: '0 0 5px 2px #777',
+    boxShadow: `0 0 5px 2px ${$Gray}`,
     color: $darkWhite
   },
   title: {

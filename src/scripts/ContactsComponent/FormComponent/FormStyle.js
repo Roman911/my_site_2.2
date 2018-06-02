@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $lightGray, $lightBlack } from "../../../styles/variables";
+import { $lightGray, $Gray, $lightBlack, $Red } from "../../../styles/variables";
 
 export default StyleSheet.create({
   item: {
@@ -24,20 +24,16 @@ export default StyleSheet.create({
     width: '100%'
   },
   btn: {
-    marginTop: 5,
-    marginBottom: 5,
+    margin: '5px 0',
     display: 'flex',
     justifyContent: 'flex-end',
   },
   button: {
-    paddingTop: 2,
-    paddingBottom: 2,
-    paddingLeft: 10,
-    paddingRight: 10,
+    padding: '2px 10px',
     backgroundColor: $lightBlack,
     border: 'none',
     cursor: 'pointer',
-    boxShadow: '0 0 5px 2px #777',
+    boxShadow: `0 0 5px 2px ${$Gray}`,
     color: $lightGray,
     fontSize: '1rem'
   },
@@ -48,6 +44,6 @@ export default StyleSheet.create({
   },
   btn__text_red: {
     display: 'inline',
-    color: 'red'
+    color: $Red
   }
 });

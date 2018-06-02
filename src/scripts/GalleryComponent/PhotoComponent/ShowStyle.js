@@ -4,10 +4,7 @@ export default StyleSheet.create({
   item: {
     overflow: 'hidden',
     boxSizing: 'border-box',
-    marginTop: 4,
-    marginBottom: 4,
-    marginLeft: 2,
-    marginRight: 2,
+    margin: '4px 2px',
     cursor: 'pointer',
     fontSize: 0
   },

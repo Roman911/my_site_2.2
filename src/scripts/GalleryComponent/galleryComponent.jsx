@@ -119,8 +119,16 @@ export default class GalleryComponent extends Component {
 
     const img3 = this.state.photo.filter((item) => {
       let img;
-      if (item.tag === this.state.tag) {
-        img = item
+      if (typeof item.tag === 'string') {
+        if (item.tag === this.state.tag) {
+          img = item
+        }
+      } else {
+        item.tag.forEach((item) => {
+          if (item === this.state.tag){
+            return img = item
+          }
+        });
       }
       return img
     });

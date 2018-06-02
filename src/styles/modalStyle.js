@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $darkWhite, $darkGray, $lightBlack, $lightGray, $Gray, $Red } from './variables';
+import { $darkWhite, $lightGray, $Gray, $darkGray, $lightBlack, $Red } from './variables';
 
 export default StyleSheet.create({
   modalBg: {
@@ -17,9 +17,8 @@ export default StyleSheet.create({
   },
   modal: {
     backgroundColor: $darkWhite,
-    border: '2px solid',
-    borderColor: $darkGray,
-    boxShadow: '0 0 10px 4px #d6d6d6',
+    border: `2px solid ${$darkGray}`,
+    boxShadow: `0 0 10px 4px ${$lightGray}`,
     width: 500,
     maxHeight: '100%',
     '@media (max-width: 768px)': {
@@ -30,8 +29,7 @@ export default StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     margin: 10,
-    borderBottom: '2px solid',
-    borderBottomColor: $darkGray,
+    borderBottom: `2px solid ${$darkGray}`,
     '@media (max-width: 768px)': {
       margin: 5
     }
@@ -55,14 +53,11 @@ export default StyleSheet.create({
     }
   },
   button: {
-    paddingTop: 7,
-    paddingBottom: 7,
-    paddingLeft: 25,
-    paddingRight: 25,
+    padding: '7px 25px',
     backgroundColor: $lightBlack,
     border: 'none',
     cursor: 'pointer',
-    boxShadow: '0 0 5px 2px #777',
+    boxShadow: `0 0 5px 2px ${$Gray}`,
     color: $lightGray,
     fontSize: '1.1rem'
   },
@@ -78,11 +73,8 @@ export default StyleSheet.create({
   btnRemove: {
     boxSizing: 'border-box',
     background: 'none',
-    border: '1px solid rgba(0, 0, 0, 0)',
-    paddingTop: 4,
-    paddingBottom: 4,
-    paddingRight: 11,
-    paddingLeft: 11,
+    border: `1px solid ${$lightBlack}`,
+    padding: '4px 11px',
     position: 'absolute',
     top: '1%',
     right: '2%',
@@ -93,9 +85,7 @@ export default StyleSheet.create({
     transition: '0.5s',
     ':hover': {
       boxSizing: 'border-box',
-      borderWidth: 1,
-      borderStyle: 'solid',
-      borderColor: $Red,
+      border: `1px solid ${$Red}`,
       borderRadius: 17,
       color: $lightGray,
       backgroundColor: 'rgba(119,119,119,0.15)',
@@ -105,7 +95,6 @@ export default StyleSheet.create({
   },
   feedbackWrapper: {
     padding: '15px 10px',
-    borderBottom: '1px solid',
-    borderColor: $Gray
+    borderBottom: `1px solid ${$Gray}`
   }
 });

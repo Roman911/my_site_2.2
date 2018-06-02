@@ -1,6 +1,6 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import {$white, $Gray} from "../../../styles/variables";
+import {$white, $Gray, $Red} from "../../../styles/variables";
 
 export default StyleSheet.create({
   bgWindow: {
@@ -15,17 +15,11 @@ export default StyleSheet.create({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    border: '1px solid #e45242',
-    paddingTop: 50,
-    paddingBottom: 50,
-    paddingLeft: 100,
-    paddingRight: 100,
+    border: `1px solid ${$Red}`,
+    padding: `50px 100px`,
     backgroundColor: $Gray,
     '@media (max-width: 768px)': {
-      paddingTop: 25,
-      paddingBottom: 25,
-      paddingLeft: 40,
-      paddingRight: 40,
+      padding: `25px 40px`,
       minWidth: 200
     }
   },

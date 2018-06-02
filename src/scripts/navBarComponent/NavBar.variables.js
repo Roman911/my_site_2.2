@@ -1,5 +1,5 @@
 export const enter = ['Вхід', 'Вход', 'Enter'];
-export const data = ['Дані', 'Данніе', 'Data'];
+export const data = ['Дані', 'Данные', 'Data'];
 export const iconEnter = 'fas fa-user';
 export const iconData = 'fas fa-archive';
 export const header = ['Введіть логін і пароль', 'Введите логин и пароль', 'Enter login and password'];

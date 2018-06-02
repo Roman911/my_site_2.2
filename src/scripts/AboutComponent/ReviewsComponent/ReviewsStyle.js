@@ -5,16 +5,12 @@ import {$lightBlack, $lightGray, $Gray, $Red} from "../../../styles/variables";
 export default StyleSheet.create({
   contentWrapper: {
     boxSizing: 'border-box',
-    paddingTop: 63,
-    paddingBottom: 63,
-    paddingLeft: 10,
-    paddingRight: 10
+    padding: '63px 10px'
   },
   header: {
     display: 'flex',
     justifyContent: 'space-between',
-    borderBottom: '2px solid',
-    borderBottomColor: $Red,
+    borderBottom: `2px solid ${$Red}`,
     paddingBottom: 15
   },
   head: {
@@ -33,21 +29,15 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    paddingTop: 7,
-    paddingBottom: 7,
-    paddingLeft: 20,
-    paddingRight: 20,
+    padding: '7px 20px',
     backgroundColor: $lightBlack,
     border: 'none',
     cursor: 'pointer',
-    boxShadow: '0 0 5px 2px #777',
+    boxShadow: `0 0 5px 2px ${$Gray}`,
     color: $lightGray,
     fontSize: '1rem',
     '@media (max-width: 768px)': {
-      paddingTop: 5,
-      paddingBottom: 5,
-      paddingLeft: 10,
-      paddingRight: 10,
+      padding: '5px 10px',
       fontSize: '0.8rem'
     }
   },
@@ -57,9 +47,7 @@ export default StyleSheet.create({
     marginRight: 15
   },
   reviewWrapper: {
-    paddingTop: 15,
-    paddingBottom: 15,
-    borderBottom: '1px solid',
-    borderColor: $Gray
+    padding: '15px 0',
+    borderBottom: `1px solid ${$Gray}`
   }
 });

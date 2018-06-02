@@ -7,10 +7,7 @@ export default StyleSheet.create({
     boxSizing: 'border-box'
   },
   contentWrapper: {
-    paddingTop: 64,
-    paddingBottom: 64,
-    paddingLeft: 0,
-    paddingRight: 0,
+    padding: '64px 0',
     backgroundColor: $Gray,
     transition: '0.5s',
     ':hover': {

@@ -7,10 +7,7 @@ export default StyleSheet.create({
     boxSizing: 'border-box',
     border: 'none',
     backgroundColor: $darkWhite,
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 6,
-    paddingRight: 6,
+    padding: '0 6px',
     cursor: 'pointer',
     ':hover': {
       backgroundColor: $lightGray

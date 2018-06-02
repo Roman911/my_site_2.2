@@ -4,14 +4,10 @@ import { $lightGray2 } from "../../../styles/variables";
 
 export default StyleSheet.create({
   contentWrapper: {
-    border: '1px solid #a0a0a0',
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: $lightGray2,
-    marginLeft: 5,
-    marginRight: 5,
+    border: `1px solid ${$lightGray2}`,
+    margin: '0 5px',
     textAlign: 'center',
-    boxShadow: '0 0 5px 1px #a0a0a0'
+    boxShadow: `0 0 5px 1px ${$lightGray2}`
   },
   header: {
     margin: 10,

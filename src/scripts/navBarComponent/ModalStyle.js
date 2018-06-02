@@ -1,7 +1,8 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import {$Gray} from "../../styles/variables";
-
 export default StyleSheet.create({
-
+  modalOv: {
+    maxHeight: 'calc(100vh - 50px)',
+    overflow: 'auto'
+  }
 });

@@ -1,25 +1,22 @@
 import { StyleSheet } from 'aphrodite/no-important';
 
-import { $lightGray } from "../../styles/variables";
+import { $lightGray, $lightGray3 } from "../../styles/variables";
 
 export default StyleSheet.create({
   contentWrapper: {
     boxSizing: 'border-box',
-    paddingTop: 63,
-    paddingBottom: 63,
+    padding: '63px 0',
     margin: 'auto'
   },
   border: {
-    border: '1px solid',
-    borderColor: $lightGray,
-    boxShadow: '0 0 5px 1px #929292'
+    border: `1px solid ${$lightGray}`,
+    boxShadow: `0 0 5px 1px ${$lightGray3}`
   },
   borderNone: {
     border: 'none'
   },
   header: {
-    marginTop: 25,
-    marginBottom: 25,
+    margin: '25px 0',
     textAlign: 'center'
   },
   headerText: {
@@ -45,4 +42,3 @@ export default StyleSheet.create({
     }
   }
 });
-

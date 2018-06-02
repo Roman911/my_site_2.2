@@ -4,8 +4,7 @@ import { $white, $lightGray, $Gray, $darkGray } from "../../../styles/variables"
 
 export default StyleSheet.create({
   block: {
-    paddingLeft: 16,
-    paddingRight: 16
+    padding: '0 16px'
   },
   header: {
     display: 'flex',
